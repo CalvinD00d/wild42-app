@@ -1,0 +1,1205 @@
+/* Imports */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: "Montserrat";
+  --font-interface: "Roboto", sans-serif;
+}
+
+/* Theme */
+
+:root {
+  --bg: #0b0f14;
+  --panel: #0f1722;
+  --panel-2: #101b28;
+  --text: #e7edf6;
+  --muted: #a8b3c5;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-2: rgba(255, 255, 255, 0.14);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --focus: 0 0 0 3px rgba(125, 211, 252, 0.35);
+  overflow: hidden;
+}
+
+/* Base styles — alphabetized by selector */
+
+.aboutCopy p {
+  margin: 0 0 16px;
+}
+
+.aboutLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 0.95fr);
+  align-items: start;
+  gap: clamp(36px, 5vw, 64px);
+}
+
+.aboutStack {
+  align-self: start;
+}
+
+.aboutStack div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 26px;
+  padding: 18px 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aboutStack img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+  object-position: center;
+}
+
+.aboutStack span {
+  white-space: pre-line;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.assetCard {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.assetCard > p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.assetCard a,
+.assetCard button {
+  display: block;
+  width: min(100%, 500px);
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--border-2);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.assetCard h4 {
+  margin: 0 0 8px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.assetCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.assetCard:nth-child(even) {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.assetGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 18px;
+}
+
+.assetGroup > h3 {
+  margin: 0 0 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.assetGroup > p {
+  max-width: 78ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.assetGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.caseStudyBody {
+  margin-top: 3px;
+  padding: 6px 0 12px;
+  border-top: 1px solid rgba(125, 211, 252, 0.35);
+  color: #d6deea;
+  line-height: 1.7;
+}
+
+.caseStudyButton {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #ffffff08, #ffffff04);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform 170ms,
+    border-color 170ms,
+    background 170ms;
+}
+
+.caseStudyButton:hover,
+.caseStudyButton:focus-visible {
+  transform: translateY(-2px);
+  border-color: #7dd3fc59;
+  background: linear-gradient(180deg, #7dd3fc14, #ffffff05);
+}
+
+.caseStudySubtitle {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.caseStudyTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1em;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.caseStudyPinnedHeading {
+  /* margin: 0 0 24px; */
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.caseStudySection {
+  margin-bottom: 12px;
+}
+
+.caseStudySection summary {
+  padding: 10px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.certificationCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 10px;
+}
+
+.certificationCopy span {
+  color: var(--muted);
+}
+
+.certificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.certificationList img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  border-radius: 8px;
+}
+
+.certificationList li {
+  display: grid;
+  grid-template-columns: minmax(170px, 30%) 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+.contactLinkedin {
+  display: inline-block;
+  margin-top: 18px;
+  color: #d8f3ff;
+}
+
+.contactMethodRow {
+  display: flex;
+  gap: 10px;
+}
+
+.contactMethods a {
+  width: fit-content;
+  color: #d8f3ff;
+  text-decoration: none;
+}
+
+.contactMethods a:hover {
+  color: #7dd4fcd7;
+}
+
+.contactSheetContent {
+  width: 100%;
+}
+
+.contactSheetContent > p {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.contactSheetContent button {
+  width: fit-content;
+  min-width: 110px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(120, 160, 255, 0.2);
+  padding: 10px 18px;
+  cursor: pointer;
+}
+
+.contactSheetContent button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.contactSheetContent form {
+  display: grid;
+  gap: 10px;
+}
+
+.contactSheetContent input,
+.contactSheetContent textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(252, 252, 252, 0.12);
+  color: var(--text);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.contactSheetContent input:focus,
+.contactSheetContent textarea:focus {
+  border-color: #646cff;
+}
+
+.contactSheetContent textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.messageSent {
+  display: grid;
+  min-height: 220px;
+  place-content: center;
+  text-align: center;
+}
+
+.messageSent h2 {
+  margin: 0 0 8px;
+  color: rgba(140, 255, 180, 0.95);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.messageSent p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.contactError {
+  color: #ffadad;
+}
+
+.imageViewer {
+  position: relative;
+  display: flex;
+  width: 70vw;
+  height: min(90%, 760px);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      1000px 800px at 20% 0%,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(168, 85, 247, 0.1),
+      transparent 55%
+    ),
+    rgba(3, 6, 10, 0.93);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+.imageViewer > button {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.imageViewerInstructions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  color: var(--text);
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  pointer-events: auto;
+  padding-left: 35px;
+}
+
+.imageViewerInstructions span {
+  width: 20px;
+  font-size: 24px;
+  line-height: 1;
+  text-align: center;
+}
+
+.imageViewerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(3px);
+}
+
+.imageViewerWrap {
+  display: flex;
+  width: 100%;
+  min-height: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  touch-action: none;
+  cursor: grab;
+}
+
+.imageViewerWrap .zImg {
+  display: block;
+  width: auto;
+  height: 65vh;
+  max-width: none;
+  max-height: none;
+  border-radius: 20px;
+  user-select: none;
+  will-change: transform;
+  -webkit-user-drag: none;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+.imageViewerWrap:active {
+  cursor: grabbing;
+}
+
+/* .itemLink {
+  color: white;
+} */
+
+/* .itemLink:hover {
+  color: #1d6581;
+  font-size: 1.1em;
+} */
+
+.menuBar {
+  border-radius: 9999px;
+  background: var(--text);
+}
+
+.menuCloseIcon {
+  color: var(--text);
+  font-size: 4em;
+  line-height: 1;
+  transition: transform 440ms;
+}
+
+.menuToggle {
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  transition: transform 440ms;
+}
+
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(3px);
+}
+
+.modalClose {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  flex: 0 0 50px;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.modalClose:hover,
+.modalClose:focus-visible {
+  color: #7dd4fcd7;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modalContent p {
+  /* max-width: 65ch; */
+  line-height: 1.7;
+}
+
+.modalContent,
+.caseStudyContent {
+  padding: 22px 8% 36px;
+  font-family: "Roboto", sans-serif;
+}
+
+.modalEmptyState {
+  min-height: 250px;
+  padding: 28px;
+  border: 1px solid rgba(100, 108, 255, 0.27);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.modalList,
+.contactMethods,
+.resumeSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalPanel {
+  width: 70vw;
+  height: min(90%, 760px);
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      1000px 800px at 20% 0%,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(168, 85, 247, 0.1),
+      transparent 55%
+    ),
+    rgba(11, 15, 20, 0.93);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.modalPanelContact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30vw;
+  height: 65vh;
+}
+
+.modalPanelMessageSent {
+  width: 30vw;
+  height: 40vh;
+}
+
+.modalPanelWide {
+  width: 70vw;
+  height: 90vh;
+}
+
+.modalScrollRegion {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  border-radius: 22px;
+}
+
+.modalScrollRegion::-webkit-scrollbar {
+  width: 9px;
+}
+
+.modalScrollRegion::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.52);
+  background-clip: padding-box;
+}
+
+.modalScrollRegion::-webkit-scrollbar-thumb:hover {
+  background: rgba(226, 232, 240, 0.72);
+  background-clip: padding-box;
+}
+
+.modalScrollRegion::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modalStickyHeader {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 12px 14px 0;
+  background:
+    radial-gradient(
+      1000px 800px at 20% 0%,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(168, 85, 247, 0.1),
+      transparent 55%
+    ),
+    rgba(11, 15, 20, 0.94);
+  backdrop-filter: blur(4px);
+}
+
+.modalTab {
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: rgba(10, 20, 30, 0.35);
+  color: #fff;
+  cursor: pointer;
+}
+
+.modalTab:focus-visible {
+  position: relative;
+  z-index: 1;
+}
+
+.modalTab.isActive {
+  border-color: #646cff;
+  background: rgba(35, 54, 73, 0.75);
+}
+
+.modalTabs {
+  position: sticky;
+  top: 66px;
+  z-index: 3;
+  display: flex;
+  gap: 3px;
+  padding: 10px 30px 0;
+  background: rgba(11, 15, 20, 0.94);
+}
+
+.modalTitleRow {
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+}
+
+.modalTitleRow h2 {
+  margin: 0;
+  padding-left: 15px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(20px, 2vw, 28px);
+}
+
+.navLink {
+  background: transparent;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  height: 85px;
+}
+
+.navLink:hover {
+  color: #3394bb;
+  font-size: 1.1em;
+}
+
+.navLink:focus-visible {
+  font-size: 1.1em;
+}
+
+.portfolioBrand {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+}
+
+.portfolioHeader {
+  backdrop-filter: blur(10px);
+}
+
+.portfolioHero {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: var(--shadow);
+}
+
+.portfolioHeroIntro {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.portfolioHeroPortrait {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.portfolioHeroTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(28px, 3vw, 35px);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.portfolioProfile {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: var(--shadow);
+}
+
+.portfolioProfileCopy {
+  border-top: 1px solid var(--border);
+}
+
+.portfolioSelectedWork {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.portfolioWorkScroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.portfolioWorkScroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #a855f71a;
+}
+
+.portfolioWorkScroll::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #a955f760;
+}
+
+.profileName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.profilePortrait {
+  border-radius: 10px;
+  background:
+    radial-gradient(
+      800px 400px at 40% 20%,
+      rgba(56, 189, 248, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 380px at 70% 55%,
+      rgba(168, 85, 247, 0.14),
+      transparent 62%
+    ),
+    rgba(255, 255, 255, 0.03);
+}
+
+.profileRole {
+  color: var(--muted);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.resumeDocument > h2 {
+  margin-top: 0;
+}
+
+.resumeDocument details {
+  margin-bottom: 15px;
+}
+
+.resumeDocument li > span {
+  color: var(--muted);
+}
+
+.resumeDocument li > span,
+.resumeDocument li > em,
+.resumeDocument li > strong {
+  display: block;
+}
+
+.resumeDocument summary {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.35);
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.resumeDocument ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resumeJob {
+  list-style: none;
+}
+
+.resumeJob > ul {
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.resumeSummary h3 {
+  margin: 10px 0 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.resumeSummary p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.selectedWorkHeading {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.sendButton {
+  transition:
+  transform 170ms,
+  border-color 170ms,
+  background 170ms;
+}
+
+.sendButton:hover {
+  transform: translateY(-2px);
+  border-color: #7dd3fc59;
+  background: linear-gradient(180deg, #7dd3fc14, #ffffff05);
+}
+
+.skipLink {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10001;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #e7edf6;
+  color: #0b0f14;
+  font-weight: 700;
+  transform: translateY(-150%);
+  transition: transform 140ms ease;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.workList {
+  list-style: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  place-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(1000px 800px at 20% 0%, #38bdf81a, transparent 55%),
+    radial-gradient(900px 700px at 90% 20%, #a855f71a, transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Helvetica,
+    "Montserrat",
+    "Roboto",
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+}
+
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #7dd3fc;
+  outline-offset: 3px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Responsive: mobile width */
+
+@media (max-width: 650px) {
+  .aboutLayout {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 18px;
+  }
+
+  .aboutStack {
+    display: flex;
+    align-items: center;
+  }
+
+  .aboutStack div {
+    flex: 1;
+    border-top: 0;
+    border-left: 1px solid var(--border);
+    padding: 10px 14px;
+  }
+
+  .aboutStack img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .assetCard a,
+  .assetCard button {
+    width: 100%;
+  }
+
+  .assetCard,
+  .assetCard:nth-child(even) {
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .certificationList img {
+    width: 100%;
+  }
+
+  .certificationList li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contactMethodRow {
+    flex-direction: column;
+  }
+
+  .imageViewer {
+    width: 90%;
+    height: 90%;
+    border-radius: 22px;
+  }
+
+  .imageViewerInstructions {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .imageViewerOverlay {
+    padding: 10px;
+  }
+
+  .imageViewerWrap .zImg {
+    width: auto;
+    height: 65vh;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 78px);
+    border-radius: 12px;
+  }
+
+  .imageViewerWrap .zImgRotated {
+    width: auto;
+    height: 82vw;
+    max-width: none;
+    max-height: none;
+  }
+
+.messageSent {
+  display: grid;
+  min-height: 220px;
+  place-content: center;
+  text-align: center;
+}
+
+  .modalBackdrop {
+    padding: 10px;
+  }
+
+  .modalContent,
+  .caseStudyContent {
+    padding: 16px 6% 28px;
+  }
+
+  .modalPanel,
+  .modalPanelWide,
+  .modalPanelContact {
+    width: 90%;
+    height: 70%;
+    border-radius: 22px;
+  }
+
+.modalPanelMessageSent {
+  width: 90vw;
+  height: 40vh;
+}
+
+  .modalTab {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+  }
+
+  .modalTabs {
+    top: 64px;
+    overflow-x: auto;
+    padding-inline: 12px;
+  }
+
+  .portfolioNavLinks.isOpen {
+    position: absolute;
+    top: 100%;
+    left: calc(-11% + 11px);
+    z-index: 30;
+    display: flex;
+    width: 100vw;
+    height: 85vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 12px;
+    background:
+      radial-gradient(
+        1000px 800px at 20% 0%,
+        rgba(56, 189, 248, 0.1),
+        transparent 55%
+      ),
+      radial-gradient(
+        900px 700px at 90% 20%,
+        rgba(168, 85, 247, 0.1),
+        transparent 55%
+      ),
+      #0b0f14f0;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    font-size: 1.5em;
+  }
+
+  .portfolioBrand {
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .portfolioHeroIntro {
+    font-size: 1em;
+    line-height: 1.35;
+  }
+
+  .portfolioHeroTitle {
+    font-size: clamp(22px, 8vw, 24px);
+    line-height: 1.05;
+  }
+}
+
+/* Responsive: short desktop height */
+
+@media (max-height: 820px) and (min-width: 901px) {
+
+  
+
+.modalPanel {
+  width: 70vw;
+  height: min(80%, 760px);
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  border-radius: 30px;
+  background:
+    radial-gradient(
+      1000px 800px at 20% 0%,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      900px 700px at 90% 20%,
+      rgba(168, 85, 247, 0.1),
+      transparent 55%
+    ),
+    rgba(11, 15, 20, 0.93);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.modalPanelContact {
+    width: 50vw;
+}
+
+  .portfolioHero {
+    margin-bottom: 7px;
+    padding: 12px 18px;
+  }
+
+  .portfolioHero h1 {
+    margin-bottom: 3px;
+    font-size: 27px;
+  }
+
+  .portfolioHero p {
+    line-height: 1.3;
+  }
+
+  .portfolioMain {
+    min-height: 0;
+    flex: 1 1 auto;
+    gap: 18px;
+    padding-top: 4px;
+  }
+
+  .portfolioNav {
+    padding: 4px 8px 6px;
+  }
+
+  .portfolioNav > div > div:first-child {
+    padding-block: 4px;
+    font-size: 1.05em;
+    line-height: 1.25;
+  }
+
+  .portfolioProfile {
+    height: calc(100dvh - 91px);
+    max-height: 650px;
+  }
+
+  .portfolioProfileCopy {
+    flex: 0 0 auto;
+    padding-block: 13px 15px;
+  }
+
+  .portfolioProfileImage {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  .portfolioProfileImage img {
+    height: 100%;
+    aspect-ratio: auto;
+    object-position: center 24%;
+  }
+
+  .portfolioProfileInner {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .portfolioSelectedWork {
+    height: calc(100dvh - 189px);
+    min-height: 0;
+    max-height: none;
+    padding: 12px;
+  }
+
+  .portfolioShell {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding: 10px 28px;
+  }
+
+  .portfolioWorkScroll {
+    height: calc(100dvh - 245px);
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+/* Accessibility: reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

@@ -1,0 +1,1334 @@
+import { ASSETS } from "./assets.js";
+
+export const SITE_CONTENT = {
+  profile: {
+    name: "Calvin McWilliams",
+    title: "UX Engineer / Frontend Developer",
+    stackTitle: "Talent Stack",
+    talentStack: `UX/UI\nFrontend Web\nReact\nFacilitation\nGraphic Design\n`,
+    brandMark: `wild (42) {
+    \u00A0\u00A0\u00A0\u00A0media;
+    }`,
+    images: {
+      headshot: ASSETS.headshot,
+    },
+  },
+
+  nav: {
+    about: {
+      title: "About",
+      body: [
+        { type: "p", parts: [{ text: "Wild42Media", bold: true }] },
+        {
+          type: "p",
+          parts: [
+            {
+              text:
+                "This is the official portfolio and creative hub of Calvin McWilliams — UX/UI designer, UX engineer, web developer, and multi-disciplinary creative. Calvin designs and builds intentional digital systems where aesthetics, functionality, and human behavior align to create clear, intuitive experiences. He specializes in crafting high-impact solutions that balance visual design, usability, and user psychology.",
+            },
+          ],
+        },
+        { type: "p", parts: [{ text: "UX/UI Designer/Developer", bold: true }] },
+        {
+          type: "p",
+          parts: [
+            {
+              text:
+                "Backed by a Google UX Design Certification, I specialize in creating user-centered experiences for web and mobile platforms. My process is driven by in-depth UX research, usability testing, and iterative prototyping, ensuring designs are both functional and engaging.",
+            },
+          ],
+        },
+        { type: "p", parts: [{ text: "Frontend Web Designer/Developer", bold: true }] },
+        {
+          type: "p",
+          parts: [
+            {
+              text:
+                "I design and engineer responsive web experiences using HTML5, CSS, JavaScript, Google Apps Script, and React. Grounded in UX principles and accessibility standards, I translate product logic and human behavior into clear, intuitive interfaces.",
+            },
+          ],
+        },
+        { type: "p", parts: [{ text: "Overall", bold: true }] },
+        {
+          type: "p",
+          parts: [
+            {
+              text:
+                "With six years of independent UX and web design experience, four years at Accenture, and contract work with AMD, I bring a broad talent stack that bridges user experience, design, and front-end development.",
+            },
+          ],
+        },
+      ],
+    },
+
+    certifications: {
+      title: "Certifications",
+      items: [
+        {
+          name: "Google UX Design Certification",
+          issuer: "Coursera",
+          year: "02/22/2025",
+          imageKey: ASSETS.gUX1,
+          alt: "Google UX Design Certificate",
+        },
+        {
+          name: "Build Dynamic User Interfaces (UI) for Websites",
+          issuer: "Coursera",
+          year: "02/21/2025",
+          imageKey: ASSETS.gUX2,
+          alt: "Hi-Fi Prototypes",
+        },
+        {
+          name: "Create High-Fidelity Designs and Prototypes in Figma",
+          issuer: "Coursera",
+          year: "12/01/2022",
+          imageKey: ASSETS.gUX3,
+          alt: "Hi-Fi Prototypes",
+        },
+        {
+          name: "Conduct UX Research and Test Early Concepts",
+          issuer: "Coursera",
+          year: "11/10/2022",
+          imageKey: ASSETS.gUX4,
+          alt: "Hi-Fi Prototypes",
+        },
+        {
+          name: "Build Wireframes and Low-Fidelity Prototypes",
+          issuer: "Coursera",
+          year: "11/5/2022",
+          imageKey: ASSETS.gUX5,
+          alt: "Hi-Fi Prototypes",
+        },
+        {
+          name: "Start the UX Design Process: Empathize, Define, and Ideate",
+          issuer: "Coursera",
+          year: "11/03/2022",
+          imageKey: ASSETS.gUX6,
+          alt: "Hi-Fi Prototypes",
+        },
+        {
+          name: "Foundations of User Experience (UX) Design",
+          issuer: "Coursera",
+          year: "11/03/2022",
+          imageKey: ASSETS.gUX7,
+          alt: "Hi-Fi Prototypes",
+        },
+      ],
+    },
+
+    resume: {
+      title: "Resume",
+      sections: [
+        {
+          heading: "Skills",
+          items: [
+            {
+              label: "UX & Interaction Design",
+              details:
+                "User journeys, information architecture, task flows, wireframes, interactive prototypes, design systems, UI architecture, responsive patterns",
+            },
+            {
+              label: "Prototyping & Tools",
+              details:
+                "Figma (components/variants, Auto Layout, interactive prototypes), Adobe XD, Adobe CC (Photoshop/Illustrator/InDesign)",
+            },
+            {
+              label: "Accessibility",
+              details:
+                "WCAG 2.x/Section 508 alignment, semantic structure, keyboard navigation, focus management, color/contrast",
+            },
+            {
+              label: "Research & Testing",
+              details:
+                "Usability test planning, testable prototypes, moderated feedback loops, iteration cycles",
+            },
+            {
+              label: "Client Collaboration and Facilitation",
+              details:
+                "Client-facing design facilitation, discovery workshops, cross-functional collaboration, stakeholder alignment, requirements capture, backlog refinement",
+            },
+            {
+              label: "Technical Fluency (enables better handoff)",
+              details:
+                "React, JavaScript (ES6+), HTML5, CSS3, REST APIs, Axios, Node.js/Express (basic), Supabase (PostgreSQL)",
+            },
+          ],
+        },
+        {
+          heading: "Experience",
+          items: [
+            {
+              company: "AMD",
+              position: "UX/UI Engineer (contract)",
+              date: "October 2025 - February 2026",
+              bullets: [
+                "Designed a user interface for highly complex internal software for server/chip/processor testing in a mixed-workloads capacity.",
+                "Designed, prototyped, and connected multiple user interface design boards in Figma according to various requirements and needs.",
+                "User interface requirements involved:",
+                {
+                  sub: [
+                    "Making the interface look more like a well-thought web-app instead of a million buttons scattered by an engineer.",
+                    "Lowering the amount of cognitive overload for the user.",
+                    "Organizing the way the data is disseminated to reduce ambiguity in decision making.",
+                    "Fostering a flow to lower complexity in navigation and ensure that as few pages are involved as possibleto simplify the experience.",
+                    "Establishing a stylized design system to create an aesthetic balance and maintain a high enoughcontrast to keep the user focused as well as creating a dark-mode setting.",
+                    "Ensured that everything was componentized and reusable.",
+                  ],
+                },
+              ],
+            },
+            {
+              company: "Accenture",
+              position: "UX/UI Engineer / Web / Automation Developer",
+              date: "June 2021 - February 2025",
+              bullets: [
+                "Designed and shipped reusable UI patterns and component libraries in Figma for internal enterprise tools; partnered with engineers to implement equivalent React components for consistency and speed.",
+                "Translated complex requirements into user flows, wireframes, interactive prototypes, and high-fidelity designs; drove design decisions grounded in user-centered principles and platform constraints.",
+                "Elevated accessibility in new and existing interfaces (WCAG 2.x): improved contrast, keyboard navigation, focusstates, and ARIA landmarks in partnership with QA.",
+                "Planned and ran usability evaluations with interactive prototypes; synthesized findings into clearrecommendations to simplify workflows and reduce error paths.",
+                "Worked in Agile/Scrum sprints with PMs, designers, and engineers; authored acceptance criteria, supported QA, and ensured design intent through delivery.",
+                "Created HR dashboards and Chrome extension UIs adopted by high-impact internal teams for daily operations, improving clarity and time-to-task.",
+              ],
+            },
+            {
+              company: "Independent Web Design and Development",
+              position: "UX/UI Engineer / Web Developer",
+              date: "April 2025 - present",
+              bullets: [
+                {
+                  text: "Finding Function (2025)",
+                  bullet: true,
+                  sub: [
+                    "Led end-to-end Figma driven UX and built responsive React front end with Node/Express + Supabasebackend.",
+                  ],
+                },
+                {
+                  text: "R&S Nurse Call Parts (2025)",
+                  bullet: true,
+                  sub: [
+                    "Led end-to-end UX from Figma to production; built responsive React front end with Node/Express and Supabase.",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          heading: "Certifications",
+          items: [
+            {
+              company: "Google UX Design Certificate",
+              date: "February 2025",
+              bullets: [
+                "Training in journey mapping, wireframing, prototyping, and usability testing with Figma and Adobe XD",
+              ],
+            },
+          ],
+        },
+        {
+          heading: "Military",
+          items: [
+            {
+              company: "United States Army",
+              date: "September 1995 - September 2003",
+            },
+          ],
+        },
+      ],
+    },
+
+    contact: {
+      title: "Contact",
+      body: [
+        {
+          type: "link",
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/in/calvin-mcwilliams/",
+          newTab: true,
+        },
+      ],
+    },
+  },
+
+  projects: [
+    {
+      slug: "speedRun",
+      title: "SpeedRun-X Web App",
+      subtitle: "AMD Engineer Testing Platform",
+      
+      caseStudy: {
+        title: "SpeedRun-X (name changed to protect AMD's IP)",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "The existing workflow orchestration system had no clear starting point, no defined progression, and no reliable sense of what should happen next. Users were simply required to hold too much of the system in their heads at once and critical actions like configuring workloads or assigning environments were buried in inconsistent locations. The system exposed nearly all of its complexity upfront. With many of the users having little to no background in engineering, this created a high cognitive burden and introduced significant risk, where small misconfigurations could lead to failed or invalid runs. Instead of guiding users, the system demanded that they adapt to it. ",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach focused on restructuring the system around user intent rather than system architecture. Instead of exposing all available functionality at once, the experience was redesigned to reveal complexity progressively, allowing users to engage with the system in layers.  ",
+              },
+              {
+                text: "Prioritization of actions",
+                sub: [
+                  "The first priority was establishing a clear mental model centered on a natural workflow: select, configure, execute, and review. This would give users an expectation of the flow and fostered confidence through familiarization.  From there, the system was reorganized to support that flow directly, ensuring that each step felt familiar, intentional, and connected.",
+                ],
+              },
+              {
+                text: "Clarity",
+                sub: [
+                  "A containment strategy was introduced to manage complexity. Rather than removing functionality, deeper configuration was isolated into focused overlays, each tied to a specific action. This allowed the main interface to remain clear and navigable while still supporting the full depth of the system when needed.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["UX/UI Engineer, Flow Architect."],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end redesign of the workflow experience, from initial interaction model through high-fidelity design, with close consideration for implementation and system constraints."],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution was a complete restructuring of the workflow experience into a centralized, hub-based system that supports a clear and repeatable process. All primary actions were anchored around a single workflow surface, allowing users to select, configure, and execute without losing context.",
+              {
+                text: "Compartmentalized layers",
+                sub: [
+                  "Configuration was reorganized into a layered model. Core parameters were surfaced directly within the main interface, while secondary and advanced options were moved into scoped overlays. Each overlay was designed with a single responsibility, such as selecting workloads, assigning environments, or modifying pipeline behavior. This eliminated overlap between surfaces and reduced the need for users to search for functionality.",
+                ],
+              },
+              {
+                text: "Guiding without handholding",
+                sub: [
+                  "The system now guides users through a defined progression. Selecting a workflow leads naturally into configuration, followed by workload and environment assignment, and ultimately execution. Optional complexity remains accessible, but no longer competes for attention with primary actions.",
+                ],
+              },
+              {
+                text: "Clarity and MORE clarity",
+                sub: [
+                  "Run visibility was also significantly improved. A dedicated run history and detail view provides clear feedback on execution status, allowing users to track, inspect, and validate their work without ambiguity. This reinforces trust in the system and reduces the friction associated with debugging or verification.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: [
+              {
+                text: "Engineering requires architecture",
+                sub: [
+                  "This project reinforced that complexity in a system is not inherently a problem, but unmanaged complexity is. The original system attempted to expose everything at once, which created confusion rather than empowerment.",
+                ],
+              },
+              {
+                text: "Less is more while keeping robustness",
+                sub: [
+                  "It also highlighted the importance of containment over reduction. Instead of simplifying the system by removing capability, the redesign focused on organizing and isolating it, allowing users to engage with complexity only when necessary.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: [
+                "The redesigned system transformed a fragmented and cognitively demanding experience into a structured and legible workflow. Users are now able to move through configuration and execution with a clear understanding of where they are, what they are doing, and what comes next."
+            ],
+          },
+        ],
+      },
+      designThinking: {
+        // title: "SpeedRun-X (name changed to protect AMD's IP)",
+        heading: "Design Thinking - Visualization",
+        sections: [
+          {
+            heading: "Challenge and Selection",
+            body: [
+              "The challenge was reducing cognitive overload within a dense enterprise engineering platform used for complex server component analysis.  The long and short is, the user interface was the front end of software for performing diagnostic tests on various server components across a vast multitude of engineering metrics numbering in the thousands.  The largest stumbling blocks being the need for users to process enormous amounts of technical information through several fragmented workflows.  This created bottomless confusion, navigation fatigue, and horrifying cognitive overload, considering that most users were not even engineers themselves but someone paid to basically push buttons to complete tasks.  I used visualization as my primary design thinking tool because the overriding issue wasn’t a lack of information, it was a lack of order and cohesive orientation throughout the interface’s processes.  More to the point, the user got “lost in the sauce” of trying to stay on course while pushing buttons.  The process would move to the next step and the lack of orientation was confusing and all order would become blurred, to say the very least.",
+            ],
+          },
+          {
+            heading: "Application",
+            body: [
+              {
+                text:
+                  "Visualization was applied through restructuring interface hierarchy, simplifying and consolidating navigation patterns, and setting clear and unmistakable connections between data, flow, and user actions.  More simply put, a straight line was used for a path with the absolute fewest number of operational options.  This proved rather difficult as this led to a need for categorization of metrics.  Someone testing for temperature metrics specifically shouldn’t be inundated with functions for speed testing.  This difficulty was overcome by using a dummied down prototype as proof of concept that grouped a few categories.  User speed increased immediately now that they weren’t having to uncheck several boxes for things they weren’t using.  Conversely, this annoyed the engineering team who now had to build for this.  There’s something to be said about “breaking eggs” and “omelettes” or something but engineers eat Hot Pockets for breakfast.",
+              },
+              {
+                text:
+                  "Moreover, I added modal overlays for items requiring adjustment, such as adding custom scripting, mathematical tweaks, changing metadata and various other actions related to the present workflow.  In my experience I have found that using modal overlays creates a navigation layer without moving the user away from the page they're on.  It essentially layers a temporary page on top, much like using a sticky note that you can hide when you've taken a note.  Users found that having this sort of control without having to navigate away from their present task reduced cognitive overload quite a bit.",
+              },
+            ],
+          },
+          {
+            heading: "Insight and Approach",
+            body: [
+              "There was an immediate and noticeable change in how users approached the platform, revealing that the primary struggle was not the technical complexity itself, but the fragmented presentation and unclear workflow. Through visualization and clearer interface hierarchy, the platform became easier to navigate, understand, and operate without reducing functionality. Instead of being placed in a maze of disconnected panels, buttons, and toggles that required constant scanning and experimentation, users were guided through a more focused and intentional experience with clear forward and backward progression. The interface shifted from something users had to decipher into something that actively oriented and guided them through their tasks. Additionally, the establishment of a cohesive design system improved scalability and consistency across an entire suite of companion human- and machine-facing software."
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "SpeedRun-X currently exists as a Figma prototype (mobile).",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Prototype - Phase 1",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/Uo8sHFbu0F2a0PPanyCZci/Untitled?node-id=89-278&p=f&t=4ZkoE0DMnutulhkX-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
+                    thumbKey: ASSETS.speedRun1,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    label: "Desktop Prototype - Phase 2",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/dax3Ws0haej7Pjb1dcUTwY/Untitled?node-id=1-2&p=f&t=D1Vwq47EQlt9kRYH-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
+                    thumbKey: ASSETS.speedRun2,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "This is a compendium of UX assets that are integral to the products but not part of the products. They are the client-facing sketches and various other UX items created throughout the process.",
+        groups: [
+          { 
+            key: "wireframes",
+            title: "Wireframes",
+            desc: "The first design was essentially a stop-gap to keep up with the deadline and to try to phase the users into a more user-friendly atmosphere without hitting them over the head with a completely overhauled design. Many of the initial designs were created using PenPot (AMD hadn't yet secured Figma licensure) and our version was Dockerized on a server that was suddenly removed by our maintenance team.  So, yes, these design assets were drawn on paper towels.",
+            label: "Web App Layout",
+            items: [
+                {
+                    type: "card",
+                    // label: "Desktop layout and design",
+                    platform: "desktop",
+                    desc: "Rethinking the design overall was met with several challenges.  The first major challenge was establishing a flow that clearly defined a start, a middle, and a finish.  My first thought was, in the politest of terms, the need to figure out how to drink from a firehose without drowning.  That metaphor became a kind of mantra throughout this process, while still keeping in mind that this app was a basic \"hack\" so that the engineers could test hardware.",
+                    thumbKey: ASSETS.sr1,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    // label: "Mobile layout and design",
+                    platform: "desktop",
+                    desc: "User friendliness is a quaint notion when paired with functionality.",
+                    thumbKey: ASSETS.sr2,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    // label: "Mobile layout and design",
+                    platform: "desktop",
+                    desc: "When you add all of the moving parts it becomes an even larger compartmentalization challenge.  Since the engineers need to control levels of everything, all of those moving parts are entirely necessary.  That said, tons of those moving poarts were only pertinent to a handful of users at any given moment, and this added to cognitive overload problems. \"Overwhelmed\" is one of many colorful words that now comes to mind as a user.",
+                    thumbKey: ASSETS.sr3,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          
+        ]
+      },
+    },
+    {
+      slug: "finding-function",
+      title: "Finding Function",
+      subtitle: "Small Business Website",
+      caseStudy: {
+        title: "Finding Function",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "People who seek professional organizing services are often already experiencing overwhelm, making it difficult to communicate value, establish trust, and motivate action. The challenge was to design a website that conveyed clarity and calm without adding cognitive or emotional friction.",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach focused on reducing cognitive load and establishing trust through clarity, restraint, and intentional structure. The experience was designed to support a gradual decision-making journey, recognizing that users often explore organizing their lives/homes/workplaces/etc., and only later seek professional help when time and cognitive load become overwhelming.",
+              },
+              {
+                text: "Facilitation-first discovery",
+                sub: [
+                  "Prioritized understanding how potential clients think and feel when overwhelmed, shaping tone, language, and structure before visual design.",
+                ],
+              },
+              {
+                text: "Intentional information hierarchy",
+                sub: [
+                  "Organized content to guide users through decisions without pressure or distraction.",
+                ],
+              },
+              {
+                text: "End-to-end implementation",
+                sub: [
+                  "Designed and built the site to ensure the final experience matched the intent, with attention to performance, accessibility, and consistency.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["UX/UI designer, frontend developer, facilitation."],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end ownership from discovery through implementation"],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution was a complete website that translated the principles of professional organization into a calm, approachable digital experience. The site balances with clarity, making engagement easy and intuitive.",
+              {
+                text: "Clear information architecture",
+                sub: [
+                  "Content was structured to help users quickly understand services, benefits, and next steps without overwhelming detail",
+                ],
+              },
+              {
+                text: "Value-forward content strategy",
+                sub: [
+                  "Educational content and examples were used to build trust and demonstrate expertise before asking for commitment.",
+                ],
+              },
+              {
+                text: "Restrained visual design",
+                sub: [
+                  "Spacing, hierarchy, and color were used intentionally to reinforce focus and reduce cognitive load.",
+                ],
+              },
+              {
+                text: "End-to-end build",
+                sub: [
+                  "The site was designed and implemented as a cohesive system, ensuring the final experience reflected the original intent across devices and interactions.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: ["This project reinforced the importance of meeting people where they are, particularly when they’re already experiencing overwhelm. When a client whose work centers on decluttering is themselves overwhelmed by uncertainty around their website, it becomes clear that clarity, restraint, and pacing are more effective than persuasion or density.",
+              {
+                text: "Facilitation precedes design",
+                sub: [
+                  "Listening and framing the problem carefully made later design decisions simpler and more consistent.",
+                ],
+              },
+              {
+                text: "Restraint builds trust",
+                sub: [
+                  "Reducing visual and informational noise helped communicate credibility and calm more effectively than emphasizing features.",
+                ],
+              },
+              {
+                text: "Good UX respects timing",
+                sub: [
+                  "Users often need space to explore and attempt solutions on their own before they’re ready to engage professionally.",
+                ],
+              },
+              {
+                text: "End-to-end ownership matters",
+                sub: [
+                  "Designing and building the site ensured the final experience aligned with the original intent, without dilution.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: [
+                "The final site provided a clear, calm foundation for the business, aligning its digital presence with the values of organization, focus, and intentional living. The experience supported clearer conversations with potential clients and reduced friction around first contact. This project reflects my facilitation-first approach to UX and frontend work, where clarity and restraint guide both design and decision-making."
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "Finding Function currently exists as a Figma prototype (desktop and mobile) as well as deskptop and mobile websites.",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Prototype",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/r4oDniQ8IL5x5RCasq0FKt/FindingFunction?node-id=23-37&p=f&t=Z7tnZoj9VOYR57CO-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=23%3A37&show-proto-sidebar=1&hide-ui=1",
+                    thumbKey: ASSETS.ffProtoDesktop1,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    label: "Mobile Prototype",
+                    platform: "mobile",
+                    href: "https://www.figma.com/proto/nyBEOWQhO3sUtlmFpmjMFj/Finding---Function-MOBILE?node-id=8-8&p=f&t=vISfk923WKnmI4il-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
+                    thumbKey: ASSETS.ffProtoMobile1,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          {
+            key: "webLinks",
+            title: "Websites",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Website",
+                    platform: "desktop",
+                    href: "https://wild42.com/finding-function/",
+                    thumbKey: ASSETS.ffDesktopWeb1,
+                    alt: "desktop web thumbnail",
+                },
+            ]
+          },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "This is a compendium of UX assets that are integral to the products but not part of the products.  They are the client-facing sketches and various other UX items created throughout the process.",
+        groups: [
+          { 
+            key: "wireframes",
+            title: "Wireframes",
+            desc: "I sat down with the client in a face to face and we sketched the designs for her website.  I find this is the best form of gleaning information for UX design and giving the client exactly what they want while offering advice for experience, layout, design and various other areas.  These designs are super simple but a foundational building block moving forwards.",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop layout and design",
+                    platform: "desktop",
+                    desc: "Because the website is for a company whose mission is decluttering, we felt it important that the website should reflect this value.  Therefore, keeping the UX minimalist and with a string focus on keeping centered and non-scrolling was a goal.",
+                    thumbKey: ASSETS.ffDesktopUX,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    label: "Mobile layout and design",
+                    platform: "desktop",
+                    desc: "The goal was even more so for the mobile iteration.",
+                    thumbKey: ASSETS.ffMobileUX,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    label: "User Journey Map",
+                    platform: "desktop",
+                    desc: "Understanding the behavior behind this.",
+                    thumbKey: ASSETS.userJourneyMap,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          
+        ]
+      },
+    },
+    {
+      slug: "ncpd",
+      title: "Nurse Call Parts Depot",
+      subtitle: "Small Business Website",
+      caseStudy: {
+        title: "Nurse Call Parts Depot",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "There’s a large industry that repairs/remodels hospital patient communication systems.  Many of the older systems are still being used to this day and many of the parts in those systems are no longer manufactured.  Various companies around the United States have an inventory of these discontinued parts at a 300% or more mark-up.  A client with an inventory needed an internet presence to sell his inventory at a distinct undercut.",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach focused on showcasing his inventory, creating a means of ordering the parts and establishing an online presence for clients to return to.",
+              },
+              {
+                text: "Facilitation-first discovery",
+                sub: [
+                  "Prioritized understanding how potential clients buy and pay for the parts and establishing a good user experience to keep the clients on track.",
+                ],
+              },
+              {
+                text: "Intentional information hierarchy",
+                sub: [
+                  "Organized content to guide users through decisions with having to navigate multiple pages or deal with endless scrolling.  Also, categorization was a huge concern.",
+                ],
+              },
+              {
+                text: "End-to-end implementation",
+                sub: [
+                  "Designed and built the site to ensure the final experience matched the intent, with attention to performance, accessibility, and consistency.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["UX/UI designer, frontend developer, facilitation."],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end ownership from discovery through implementation"],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution was a complete website that translated the principles of professional organization into a calm, approachable digital experience. The site balances with clarity, making communicating/inquiries, purchasing and returning easy and intuitive.",
+              {
+                text: "Clear information architecture",
+                sub: [
+                  "Content was structured to help users quickly understand services, benefits, and next steps without overwhelming detail",
+                ],
+              },
+              {
+                text: "Value-forward content strategy",
+                sub: [
+                  "Educational content and examples were used to build trust and demonstrate expertise before asking for commitment.",
+                ],
+              },
+              {
+                text: "Restrained visual design",
+                sub: [
+                  "Spacing, hierarchy, and color were used intentionally to reinforce focus and reduce cognitive load.",
+                ],
+              },
+              {
+                text: "End-to-end build",
+                sub: [
+                  "The site was designed and implemented as a cohesive system, ensuring the final experience reflected the original intent across devices and interactions.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: ["This project reinforced the importance of meeting people where they are, particularly when they’re already experiencing overwhelm. When a client whose work centers on decluttering is themselves overwhelmed by uncertainty around their website, it becomes clear that clarity, restraint, and pacing are more effective than persuasion or density.",
+              {
+                text: "Facilitation precedes design",
+                sub: [
+                  "Listening and framing the problem carefully made later design decisions simpler and more consistent.",
+                ],
+              },
+              {
+                text: "Restraint builds trust",
+                sub: [
+                  "Reducing visual and informational noise helped communicate credibility and calm more effectively than emphasizing features.",
+                ],
+              },
+              {
+                text: "Good UX respects timing",
+                sub: [
+                  "Users often need space to explore and attempt solutions on their own before they’re ready to engage professionally.",
+                ],
+              },
+              {
+                text: "End-to-end ownership matters",
+                sub: [
+                  "Designing and building the site ensured the final experience aligned with the original intent, without dilution.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: [
+                "The final site provided a clear, calm foundation for the business, aligning its digital presence with the values of organization, focus, and intentional living. The experience supported clearer conversations with potential clients and reduced friction around first contact. This project reflects my facilitation-first approach to UX and frontend work, where clarity and restraint guide both design and decision-making."
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "Nurse Call Parts Depot currently exists as a Figma prototype (desktop) as well as deskptop and mobile websites.",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Prototype",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/BEA2oyqqLEWBrPSwfeW4oN/Untitled?node-id=3-44&p=f&t=svTz4tKKAfU14TKi-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A44&hide-ui=1",
+                    thumbKey: ASSETS.ncpdUX1,
+                    alt: "prototype thumbnail",
+                },
+                // {
+                //     type: "card",
+                //     label: "Mobile Prototype",
+                //     href: "https://www.figma.com/proto/nyBEOWQhO3sUtlmFpmjMFj/Finding---Function-MOBILE?node-id=8-8&p=f&t=vISfk923WKnmI4il-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
+                //     thumbKey: ASSETS.ffProtoMobile1,
+                //     alt: "prototype thumbnail",
+                // },
+            ]
+          },
+          {
+            key: "webLinks",
+            title: "Websites",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Website",
+                    platform: "desktop",
+                    href: "https://rnsnursecallparts.com/room-eq/5009-9320",
+                    thumbKey: ASSETS.ncpdWeb1,
+                    alt: "desktop web thumbnail",
+                },
+            ]
+          },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "This is a compendium of UX assets that are integral to the products but not part of the products.  They are the client-facing sketches and various other UX items created throughout the process.",
+        groups: [
+          { 
+            key: "wireframes",
+            title: "Wireframes",
+            desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+            label: "Desktop layout and design",
+            items: [
+                {
+                    type: "card",
+                    // label: "Desktop layout and design",
+                    platform: "desktop",
+                    desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+                    thumbKey: ASSETS.ncpdSketch3,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    // label: "Mobile layout and design",
+                    platform: "desktop",
+                    desc: "UX can be tough for something like this because you want to lead the user's focus without cognitively overwhelming them.  This project was a lesson in the art of subtlety while maintaining \"cool\".",
+                    thumbKey: ASSETS.ncpdSketch2,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    // label: "Mobile layout and design",
+                    platform: "desktop",
+                    desc: "The mobile iteration followed though special attention needed to be paid to how the items are presented in the interface.  This can become dicey and certain trade-offs need to be considered (main image/image list images).  I found that a less is more approach is a great place to start and just work your way up from there.",
+                    thumbKey: ASSETS.ncpdSketch1,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          
+        ]
+      },
+    },
+    {
+      slug: "vidPlayer",
+      title: "Web Video Player",
+      subtitle: "An Interface For A Video Player Integration",
+      caseStudy: {
+        title: "Web Video Player",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "Traditional web video players interrupt the browsing experience by forcing users to navigate away from the primary interface into a dedicated playback environment. This separation breaks context, reduces flexibility in how content is consumed, removes the prospect of engaging with more pieces of content to the user experience, and creates friction when users want to shift between passive listening and active viewing. The challenge was to design a player that allowed continuous interaction with the core page while supporting multiple levels of engagement without disorientation or loss of state. ",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach focused on maintaining continuity by treating the player as a single persistent object rather than a destination, more of an experiential tool. Instead of routing users to different pages or contexts, the experience was structured around state changes, allowing the player to adapt fluidly between minimized, standard, and fullscreen modes. The system was designed to reveal increased functionality and immersion progressively, while preserving the user’s place within the broader interface. Particular emphasis was placed on spatial and behavioral consistency, ensuring that transitions between states felt like transformations of the same element rather than separate components. ",
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["End-to-end interaction design and prototyping, including state modeling, transition behavior, and layout consistency across all player modes."],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end redesign of the workflow experience, from initial interaction model through high-fidelity design, with close consideration for implementation and system constraints."],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution was an adaptive video player that exists as a continuous element within the interface, capable of shifting between multiple states without interrupting the user’s context. From the initial interaction, the player expands from the page into an overlay, maintaining a clear relationship to its origin. From there, users can increase immersion by transitioning into fullscreen or reduce it by collapsing the player into a minimized audio state anchored to the interface.",
+              {
+                text: "Each state preserves core controls and playback continuity, allowing users to move freely between levels of engagement without restarting or reorienting. Transitions were designed to emphasize transformation over replacement, using consistent positioning and scaling to reinforce the perception of a single object evolving in response to user intent. This approach eliminates the need for navigation while supporting a wide range of usage patterns, from focused viewing to background listening.",
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: ["This project reinforced that continuity is more valuable than separation in media experiences. By avoiding navigation and instead adapting the interface around the user, the system becomes more flexible and less disruptive. It also highlighted the importance of physicality in interaction design, where motion and transformation communicate structure more effectively than static layouts.",
+              {
+                text: "Designing the player as a single entity across all states reduced cognitive overhead and made the experience feel intuitive without requiring explanation. The work demonstrated that users benefit from systems that respond to their level of engagement, rather than forcing them into predefined modes.",
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: ["The final design provides a seamless media experience that allows users to control their level of engagement without leaving the central home page. By keeping the player anchored to a consistent “home base,” the system preserves context, reduces cognitive overhead, and eliminates the friction typically introduced by page transitions. Users can move fluidly between passive listening and active viewing while maintaining awareness of their place within the broader interface, enabling multitasking without disruption.",
+              {
+                text: "This continuity improves efficiency and engagement by removing the need to reorient after playback changes, allowing the interface to adapt around the user rather than forcing the user to adapt to it. The result is a more cohesive and responsive experience, where content consumption integrates naturally into the primary workflow instead of interrupting it.",
+              },
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "Nurse Call Parts Depot currently exists as a Figma prototype (desktop) as well as deskptop and mobile websites.",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Prototype",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/Fre7ukjkLJ17FGNdGtPmjy/Video-Player---Overlay-Iteration?node-id=1-290&p=f&t=Xeu2EbkDV3jFn91J-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A290&hide-ui=1",
+                    thumbKey: ASSETS.vidPlayerD,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    label: "Mobile Prototype",
+                    platform: "mobile",
+                    href: "https://www.figma.com/proto/lq7AilQRSSsndtEgan1QnP/Untitled?node-id=1-2&t=mU2m2pFxbmSc2Hc1-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2&hide-ui=1",
+                    thumbKey: ASSETS.vidPlayerM,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          // {
+          //   key: "webLinks",
+          //   title: "Websites",
+          //   items: [
+          //       {
+          //           type: "card",
+          //           label: "Desktop Website",
+          //           platform: "desktop",
+          //           href: "https://rnsnursecallparts.com/room-eq/5009-9320",
+          //           thumbKey: ASSETS.ncpdWeb1,
+          //           alt: "desktop web thumbnail",
+          //       },
+          //   ]
+          // },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "These image assets show the iterative process of how the wireframes function using a component system to navigate functionality versus using an overlay flow.  Both have benefits and drawbacks under the constraints of the platform (Figma).  ",
+        groups: [
+          { 
+        //     key: "wireframes",
+        //     title: "Wireframes",
+        //     desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+        //     label: "Desktop layout and design",
+            items: [
+                {
+                    type: "card",
+                    // label: "Desktop layout and design",
+                    platform: "desktop",
+                    desc: "This asset shows the flow of navigation using an overlay system.  Also a great method for creating a prototype though it can certainly also a bit time intensive as, while not creating every frame of navigation, you're physically aligning on-click overlays for every step.  This SEEMS easy enough until the elements start stacking up and then occasionally, for no identifiable reason, things are suddenly misaligned (auto-snapping and layout anomalies).  The upshot of using this method is that there is far better use of transition animations.",
+                    thumbKey: ASSETS.vidPlayerOverlayFlow,
+                    alt: "prototype thumbnail",
+                },
+                {
+                    type: "card",
+                    // label: "Desktop layout and design",
+                    platform: "desktop",
+                    desc: "This asset shows the flow of component based navigation.  This is a fantastic method for creating a consistent prototype though it is a bit time intensive as you're essentially creating every frame of navigation, sort of the way an animator creates every frame of a cartoon.",
+                    thumbKey: ASSETS.vidPlayerComponentFlow,
+                    alt: "prototype thumbnail",
+                },
+              ]
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             platform: "desktop",
+        //             desc: "UX can be tough for something like this because you want to lead the user's focus without cognitively overwhelming them.  This project was a lesson in the art of subtlety while maintaining \"cool\".",
+        //             thumbKey: ASSETS.ncpdSketch2,
+        //             alt: "prototype thumbnail",
+        //         },
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             platform: "desktop",
+        //             desc: "The mobile iteration followed though special attention needed to be paid to how the items are presented in the interface.  This can become dicey and certain trade-offs need to be considered (main image/image list images).  I found that a less is more approach is a great place to start and just work your way up from there.",
+        //             thumbKey: ASSETS.ncpdSketch1,
+        //             alt: "prototype thumbnail",
+        //         },
+        //     ]
+          },
+          
+        ]
+      },
+    },
+    {
+      slug: "maynooth",
+      title: "Maynooth Furniture",
+      subtitle: "Retail Catalogue Experience",
+      caseStudy: {
+        title: "Maynooth Furniture",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "Furniture shopping on mobile is often fragmented and overwhelming, with cluttered navigation, unclear product differentiation, and friction in moving from browsing to decision-making. Users struggle to explore styles, compare options, and confidently select products without cognitive overload.",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach focused on simplifying exploration and decision-making through clear structure, visual hierarchy, and progressive disclosure.",
+              },
+              {
+                text: "Facilitation-first thinking",
+                sub: [
+                  "Centered the experience around how users browse furniture—visually first, analytically second—prioritizing inspiration before specification.",
+                ],
+              },
+              {
+                text: "Intentional navigation design",
+                sub: [
+                  "Created a straightforward category system (Living Rooms, Kitchens, Bedrooms, etc.) to reduce friction and support intuitive movement through the app.",
+                ],
+              },
+              {
+                text: "Progressive product discovery",
+                sub: [
+                  "Designed flows that allow users to move from broad categories → product grids → detailed views without disruption.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["UX/UI designer, product thinker."],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end design from concept to high-fidelity prototype"],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution is a mobile-first furniture shopping experience that balances inspiration with clarity, allowing users to browse, evaluate, and select products with minimal friction.",
+              {
+                text: "Clear information architecture",
+                sub: [
+                  "Category-based navigation paired with consistent product grids enables fast scanning and predictable interaction patterns.",
+                ],
+              },
+              {
+                text: "Visual-first product exploration",
+                sub: [
+                  "Large imagery and clean layouts prioritize the product itself, reducing reliance on dense text.",
+                ],
+              },
+              {
+                text: "Focused product detail pages",
+                sub: [
+                  "Each product view highlights key differentiators (style, color options, naming) without overwhelming the user.",
+                ],
+              },
+              {
+                text: "Low-friction account flows",
+                sub: [
+                  "Streamlined sign-in and account creation screens reduce barriers to engagement.  I DID want to highlight the iterative process so I therefore created a way to see the overall evolution of aestehtics/functionality/etc. (Create Account: OG design vs. revised styling).",
+                ],
+              },
+              {
+                text: "Restrained UI system",
+                sub: [
+                  "Consistent spacing, muted color palette, and simple typography maintain focus and reduce cognitive load.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: [
+              {
+                text: "Clarity beats cleverness",
+                sub: [
+                  "Users don’t need novelty when making purchasing decisions—they need confidence and ease.",
+                ],
+              },
+              {
+                text: "Visual hierarchy is everything",
+                sub: [
+                  "Furniture is inherently visual, so the interface succeeds when it gets out of the way.",
+                ],
+              },
+              {
+                text: "Consistency builds trust",
+                sub: [
+                  "Repeating patterns across categories and product views reduces learning time and increases comfort.",
+                ],
+              },
+              {
+                text: "Scope discipline matters",
+                sub: [
+                  "Keeping the feature set focused allowed the core experience (browse → evaluate → select) to feel polished and intentional.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: [
+                "The prototype demonstrates a clean, scalable foundation for a mobile furniture shopping experience that prioritizes usability, clarity, and visual engagement. The design reduces friction in product discovery and supports confident decision-making, reflecting a UX approach grounded in structure, restraint, and user intent."
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "Maynooth Furniture currently exists as a Figma prototype (mobile).",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Mobile Prototype",
+                    platform: "mobile",
+                    href: "https://www.figma.com/proto/0VbOuQHoHcYEK8USWSNjjN/Maynooth-Mobile?node-id=1-8&p=f&t=4SnpRPvuxKavK71x-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&hide-ui=1",
+                    thumbKey: ASSETS.maynoothProtoMobile1,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "There are currently no other assets listed for this project.",
+        // groups: [
+        //   { 
+        //     key: "wireframes",
+        //     title: "Wireframes",
+        //     desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+        //     label: "Desktop layout and design",
+        //     items: [
+        //         {
+        //             type: "card",
+        //             // label: "Desktop layout and design",
+        //             desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+        //             thumbKey: ASSETS.ncpdSketch3,
+        //             alt: "prototype thumbnail",
+        //         },
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             desc: "UX can be tough for something like this because you want to lead the user's focus without cognitively overwhelming them.  This project was a lesson in the art of subtlety while maintaining \"cool\".",
+        //             thumbKey: ASSETS.ncpdSketch2,
+        //             alt: "prototype thumbnail",
+        //         },
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             desc: "The mobile iteration followed though special attention needed to be paid to how the items are presented in the interface.  This can become dicey and certain trade-offs need to be considered (main image/image list images).  I found that a less is more approach is a great place to start and just work your way up from there.",
+        //             thumbKey: ASSETS.ncpdSketch1,
+        //             alt: "prototype thumbnail",
+        //         },
+        //     ]
+        //   },
+          
+        // ]
+      },
+    },
+    {
+      slug: "redaction",
+      title: "Redaction Tool",
+      subtitle: "PDF Redactor Web App",
+      caseStudy: {
+        title: "Redaction Tool - Web App",
+        sections: [
+          {
+            heading: "Problem",
+            body: [
+              "In my work as an app developer at Accenture, our human resources department contacted me needing a tool to redact sensitive items on pdf documents in a destructive way that could not be reversed.  Up to this point their process involved printing all of the pdfs, redacting them with a black marker and rescanning everything and was VERY time intensive creating weeks of work over the fiscal year.  ",
+            ],
+          },
+          {
+            heading: "Approach",
+            body: [
+              {
+                text:
+                  "The approach for this required examining how pdfs are handled in various pdf platforms (Adobe, Microsoft, et al).  The simplest approach was to create an overlay that I could create redactions on and then save the whole thing as a new pdf.  ",
+              },
+              {
+                text: "Facilitation-first thinking",
+                sub: [
+                  "Centered the experience around how users browse furniture—visually first, analytically second—prioritizing inspiration before specification.",
+                ],
+              },
+              {
+                text: "End-to-end implementation",
+                sub: [
+                  "Designed and built the site to ensure the final experience matched the intent, with attention to performance, accessibility, and consistency.",
+                ],
+              },
+            ],
+          },
+          {
+            heading: "My Role",
+            body: ["UX/UI designer, developer, facilitation"],
+          },
+          {
+            heading: "My Scope",
+            body: ["End-to-end ownership from discovery through implementation"],
+          },
+          {
+            heading: "The Solution",
+            body: ["The solution was a complete web app (html, Javascript, css)  that allowed the user to simply load the pdfs into the interface, draw redaction shapes onto them (click-drag), and export them as new pdfs while leaving the original pdfs unaltered.  More than anything, leveraging Javascript (web functionality) and a very commonly and widely used Javascript library (pdf.js).  Moreover, I implemented 4 distinct functions into the app.",
+              {
+                text: "Single pdf mode",
+                sub: [
+                  "The user loads a pdf, makes redactions, exports the new pdf leaving the original unaltered. Search function:  This function allows for a keyword search inside of the interface, highlighting keywords as needed.",
+                ],
+              },
+              {
+                text: "Redaction template",
+                sub: [
+                  "The user has the option to save the redactions they have made into a template that can later be added to other pdfs as needed via the user interface.",
+                ],
+              },
+              {
+                text: "Batch mode",
+                sub: [
+                  "The user loads multiple pdfs into the interface and then loads a redaction template onto all of them.  This is a one and done process as many of the pdfs they were redacting were created from common forms from the human resources files and therefore created commonly structured pdfs.  This facilitated a “1 template fits all” solution drastically reducing work.",
+                ],
+              },
+              {
+                text: "Restrained visual design",
+                sub: [
+                  "Spacing, hierarchy, and color were used intentionally to reinforce focus and reduce cognitive load.",
+                ],
+              },
+              {
+                text: "Destructive redaction",
+                sub: [
+                  "The redactions are irreversible because they become part of the document and are neither an overlay of it nor a black highlight.",
+                ],
+              },
+              {
+                text: "End-to-end build",
+                sub: [
+                  "The site was designed and implemented as a cohesive system, ensuring the final experience reflected the original intent across devices and interactions.",
+                ],
+              },
+            ]
+          },
+          {
+            heading: "In Retrospect",
+            body: [
+              {
+                text: "This project moved the ball forward for the client, dramatically reducing the time required to actually redact and save sensitive files.  As a result of the destructive nature of the tool there were improved levels of assurance that they were getting exactly what was required of the app.",
+              },
+            ]
+          },
+          {
+            heading: "Outcome",
+            body: [
+                "The final product happily surprised the client owing to its simplicity in use, function, and design.  As a UX problem the design was relatively straight-forward.  The true challenge of it lay in its complication of function (many buttons!!!).  This primary issue was overcome in maintaining good UX, labeling things in a concise way and holding fast to my belief in not navigating users away from the products primary purpose.  Also, keeping the interface in a process ladder format whereby all steps occur from top to bottom was an important way to solve for cognitive overload in a rather complicated process.  "
+            ],
+          },
+        ],
+      },
+      products: {
+        title: "Products",
+        heading: "Redaction Tool - Web App currently exists as a Figma prototype (desktop) as well as a fully funtioning web-app.  Due to the nature of how the web app functions it was basically impossible to make the prototype mirror it.  It is therefore easier to experience this through the actual website itself, listed below.",
+        groups: [
+          { 
+            key: "uxPrototypes",
+            title: "UX Prototypes",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Prototype",
+                    platform: "desktop",
+                    href: "https://www.figma.com/proto/6DG5zdICgAAXbAxnberkjH/Untitled?node-id=11-47&p=f&t=cLoHfqF1448bTUm2-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A2",
+                    thumbKey: ASSETS.redactorUX1,
+                    alt: "prototype thumbnail",
+                },
+            ]
+          },
+          {
+            key: "webLinks",
+            title: "Websites",
+            items: [
+                {
+                    type: "card",
+                    label: "Desktop Website",
+                    platform: "desktop",
+                    href: "https://wild42.com/redactor/",
+                    thumbKey: ASSETS.redactorWEB1,
+                    alt: "desktop web thumbnail",
+                },
+            ]
+          },
+        ]
+      },  
+      otherAssets: {
+        title: "Other Assets",
+        heading: "There are currently no other assets listed for this project.",
+        // groups: [
+        //   { 
+        //     key: "wireframes",
+        //     title: "Wireframes",
+        //     desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+        //     label: "Desktop layout and design",
+        //     items: [
+        //         {
+        //             type: "card",
+        //             // label: "Desktop layout and design",
+        //             desc: "Working together with the client I came up with these sketches.  Sticking to the \"keep everything in one place\" philosophy to avoid multiple page confusion, I came up with some designs the client was happy with, in spite of their \"This doesn't need to be anything special\" protest.",
+        //             thumbKey: ASSETS.ncpdSketch3,
+        //             alt: "prototype thumbnail",
+        //         },
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             desc: "UX can be tough for something like this because you want to lead the user's focus without cognitively overwhelming them.  This project was a lesson in the art of subtlety while maintaining \"cool\".",
+        //             thumbKey: ASSETS.ncpdSketch2,
+        //             alt: "prototype thumbnail",
+        //         },
+        //         {
+        //             type: "card",
+        //             // label: "Mobile layout and design",
+        //             desc: "The mobile iteration followed though special attention needed to be paid to how the items are presented in the interface.  This can become dicey and certain trade-offs need to be considered (main image/image list images).  I found that a less is more approach is a great place to start and just work your way up from there.",
+        //             thumbKey: ASSETS.ncpdSketch1,
+        //             alt: "prototype thumbnail",
+        //         },
+        //     ]
+        //   },
+          
+        // ]
+      },
+    },
+    
+  ],
+};
+
+export function getProjectBySlug(slug) {
+  return SITE_CONTENT.projects.find((p) => p.slug === slug) || null;
+}

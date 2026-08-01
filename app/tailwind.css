@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: "Montserrat";
+  --font-interface: "Roboto", sans-serif;
+}
