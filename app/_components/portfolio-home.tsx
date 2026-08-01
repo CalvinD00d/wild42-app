@@ -9,14 +9,11 @@ import {
   useState,
 } from "react";
 import { createPortal } from "react-dom";
-import { SITE_CONTENT } from "./site-content.js";
 import { InfoContent } from "./info-content";
 import { ModalFrame } from "./modal-frame";
 import { PortfolioContent } from "./portfolio-content";
 import { PortfolioHeader } from "./portfolio-header";
-import { type ModalState, type NavItem, type Project } from "./portfolio-types";
-
-const projects = SITE_CONTENT.projects;
+import { type ModalState, type NavItem, type Project, type SiteContent } from "./portfolio-types";
 
 function CaseStudyModal({
   project,
@@ -299,7 +296,8 @@ function AssetGroups({
   );
 }
 
-export function PortfolioHome() {
+export function PortfolioHome({ content }: { content: SiteContent }) {
+  const projects = content.projects;
   const [menuOpen, setMenuOpen] = useState(false);
   const [modal, setModal] = useState<ModalState>(null);
 

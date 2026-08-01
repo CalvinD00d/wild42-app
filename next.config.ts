@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
     // Disable it because stale CSS entries were surviving normal dev restarts.
     turbopackFileSystemCacheForDev: false,
   },
-  turbopack: {
-    root: process.cwd(),
-  },
 };
 
 export default nextConfig;

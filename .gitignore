@@ -4,3 +4,7 @@ out/
 .env*
 !.env.example
 *.log
+*.tsbuildinfo
+content/backups/
+public/uploads/*
+!public/uploads/.gitkeep
