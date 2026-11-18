@@ -820,9 +820,9 @@
 
 .sendButton {
   transition:
-  transform 170ms,
-  border-color 170ms,
-  background 170ms;
+    transform 170ms,
+    border-color 170ms,
+    background 170ms;
 }
 
 .sendButton:hover {
@@ -992,12 +992,12 @@ body {
     max-height: none;
   }
 
-.messageSent {
-  display: grid;
-  min-height: 220px;
-  place-content: center;
-  text-align: center;
-}
+  .messageSent {
+    display: grid;
+    min-height: 220px;
+    place-content: center;
+    text-align: center;
+  }
 
   .modalBackdrop {
     padding: 10px;
@@ -1016,10 +1016,10 @@ body {
     border-radius: 22px;
   }
 
-.modalPanelMessageSent {
-  width: 90vw;
-  height: 40vh;
-}
+  .modalPanelMessageSent {
+    width: 90vw;
+    height: 40vh;
+  }
 
   .modalTab {
     flex: 0 0 auto;
@@ -1039,7 +1039,10 @@ body {
     z-index: 30;
     display: flex;
     width: 100vw;
-    height: 85vh;
+    height: auto;
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -1062,6 +1065,11 @@ body {
     font-size: 1.5em;
   }
 
+  .portfolioNavLinks.isOpen > div {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .portfolioBrand {
     font-size: 1.1em;
     font-weight: 600;
@@ -1081,35 +1089,32 @@ body {
 /* Responsive: short desktop height */
 
 @media (max-height: 820px) and (min-width: 901px) {
+  .modalPanel {
+    width: 70vw;
+    height: min(80%, 760px);
+    overflow: hidden;
+    padding: 8px;
+    border: 1px solid rgba(125, 211, 252, 0.35);
+    border-radius: 30px;
+    background:
+      radial-gradient(
+        1000px 800px at 20% 0%,
+        rgba(56, 189, 248, 0.1),
+        transparent 55%
+      ),
+      radial-gradient(
+        900px 700px at 90% 20%,
+        rgba(168, 85, 247, 0.1),
+        transparent 55%
+      ),
+      rgba(11, 15, 20, 0.93);
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+  }
 
-  
-
-.modalPanel {
-  width: 70vw;
-  height: min(80%, 760px);
-  overflow: hidden;
-  padding: 8px;
-  border: 1px solid rgba(125, 211, 252, 0.35);
-  border-radius: 30px;
-  background:
-    radial-gradient(
-      1000px 800px at 20% 0%,
-      rgba(56, 189, 248, 0.1),
-      transparent 55%
-    ),
-    radial-gradient(
-      900px 700px at 90% 20%,
-      rgba(168, 85, 247, 0.1),
-      transparent 55%
-    ),
-    rgba(11, 15, 20, 0.93);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(8px);
-}
-
-.modalPanelContact {
+  .modalPanelContact {
     width: 50vw;
-}
+  }
 
   .portfolioHero {
     margin-bottom: 7px;
@@ -1204,8 +1209,535 @@ body {
   }
 }
 /* Portfolio CMS */
-.adminLogin,.adminShell{min-height:100vh;background:#17151b;color:#f4efe8;font-family:var(--font-interface)}
-.adminLogin{display:grid;place-items:center;padding:24px}.adminLogin form{display:grid;gap:18px;width:min(420px,100%);padding:36px;background:#28232e;border:1px solid #655b73;border-radius:14px}.adminLogin h1,.adminLogin p{margin:0}.adminLogin label{display:grid;gap:8px}.adminLogin input,.adminLogin button{padding:12px;border-radius:8px}.adminLogin input{background:#fff;color:#17151b}.adminLogin button{background:#d6a14a;color:#17151b;font-weight:700}
-.adminShell header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid #51495b;background:#211d27}.adminShell header div{display:flex;align-items:baseline;gap:16px}.adminShell header h1{margin:0;font-size:1.4rem}.adminShell header span{color:#d6a14a}.adminShell nav{display:flex;gap:12px}.adminShell a,.adminShell button{border:1px solid #655b73;border-radius:7px;padding:8px 12px;color:inherit;background:#302a38}.adminWorkspace{display:grid;grid-template-columns:minmax(240px,320px) 1fr;min-height:calc(100vh - 75px)}.adminWorkspace aside{padding:20px;border-right:1px solid #51495b;background:#211d27}.adminAsideHeading,.adminEditorToolbar,.adminEditorFooter{display:flex;align-items:center;justify-content:space-between;gap:12px}.adminAsideHeading h2{margin:0;font-size:1rem}.adminWorkspace ol{display:grid;gap:8px;margin:18px 0 0;padding:0;list-style:none}.adminWorkspace li button{display:grid;gap:4px;width:100%;text-align:left}.adminWorkspace li button span{font-size:.75rem;color:#bdb3c7}.adminWorkspace li button.isSelected{border-color:#d6a14a;background:#44394c}.adminEditor{display:grid;grid-template-rows:auto 1fr auto;gap:16px;padding:20px;min-width:0}.adminEditorToolbar>div{display:flex;gap:8px}.adminEditorToolbar .adminSave{background:#d6a14a;color:#17151b;font-weight:700}.adminEditor label{display:grid;grid-template-rows:auto 1fr;gap:8px;min-height:0}.adminEditor textarea{width:100%;min-height:65vh;resize:vertical;padding:16px;border:1px solid #655b73;border-radius:8px;background:#100e13;color:#f4efe8;font:14px/1.5 monospace}.adminEditor output{color:#d6a14a}
-.adminAssetTool{display:flex;align-items:end;gap:16px;padding:12px;border:1px solid #51495b;border-radius:8px;background:#211d27}.adminAssetTool label{display:grid;gap:6px}.adminAssetTool input{max-width:360px;padding:8px;border:1px solid #655b73;border-radius:6px;background:#100e13;color:#f4efe8}
-@media(max-width:760px){.adminShell header,.adminShell header div{align-items:flex-start}.adminShell header{gap:16px}.adminShell header div{flex-direction:column;gap:2px}.adminWorkspace{grid-template-columns:1fr}.adminWorkspace aside{border-right:0;border-bottom:1px solid #51495b}.adminWorkspace ol{max-height:220px;overflow:auto}.adminEditorToolbar,.adminEditorFooter,.adminAssetTool{align-items:stretch;flex-direction:column}.adminEditor textarea{min-height:55vh}}
+.adminLogin,
+.adminShell {
+  min-height: 100vh;
+  width: 85%;
+  background: #17151b;
+  color: #f4efe8;
+  font-family: var(--font-interface);
+}
+.adminShell {
+  height: 100dvh;
+  /* overflow-y: auto; */
+  overscroll-behavior: contain;
+}
+.adminLogin {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+.adminLogin form {
+  display: grid;
+  gap: 18px;
+  width: min(420px, 100%);
+  padding: 36px;
+  background: #28232e;
+  border: 1px solid #655b73;
+  border-radius: 14px;
+}
+.adminLogin h1,
+.adminLogin p {
+  margin: 0;
+}
+.adminLogin label {
+  display: grid;
+  gap: 8px;
+}
+.adminLogin input,
+.adminLogin button {
+  padding: 12px;
+  border-radius: 8px;
+}
+.adminLogin input {
+  background: #fff;
+  color: #17151b;
+}
+.adminLogin button {
+  background: #d6a14a;
+  color: #17151b;
+  font-weight: 700;
+}
+.adminShell header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 18px 10px;
+  border-bottom: 1px solid #51495b;
+  background: #211d27;
+}
+.adminShell header div {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.adminShell header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+.adminShell header span {
+  color: #d6a14a;
+}
+.adminShell nav {
+  display: flex;
+  gap: 12px;
+}
+.adminShell a,
+.adminShell button {
+  border: 1px solid #655b73;
+  border-radius: 7px;
+  padding: 8px 12px;
+  color: inherit;
+  background: #302a38;
+}
+.adminWorkspace {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  min-height: calc(100vh - 75px);
+}
+.adminWorkspace aside {
+  padding: 10px;
+  border-right: 1px solid #51495b;
+  background: #211d27;
+}
+.adminAsideHeading,
+.adminEditorToolbar,
+.adminEditorFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px;
+}
+.adminAsideHeading h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+.adminWorkspace ol {
+  display: grid;
+  gap: 8px;
+  /* margin: 18px 0 0; */
+  padding: 0;
+  list-style: none;
+}
+.adminWorkspace li button {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  text-align: left;
+}
+.adminWorkspace li button span {
+  font-size: 0.75rem;
+  color: #bdb3c7;
+}
+.adminWorkspace li button.isSelected {
+  border-color: #d6a14a;
+  background: #44394c;
+}
+.adminEditor {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 20px;
+  min-width: 0;
+  height: calc(100dvh - 0px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+.adminEditorToolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.adminEditorToolbar .adminSave {
+  background: #d6a14a;
+  color: #17151b;
+  font-weight: 700;
+}
+.adminEditor output {
+  color: #d6a14a;
+}
+.adminAssetTool {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #51495b;
+  border-radius: 8px;
+  background: #211d27;
+}
+.adminAssetTool label {
+  display: grid;
+  gap: 6px;
+}
+.adminAssetTool input {
+  max-width: 360px;
+  padding: 8px;
+  border: 1px solid #655b73;
+  border-radius: 6px;
+  background: #100e13;
+  color: #f4efe8;
+}
+
+.asideStatus {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+@media (max-width: 760px) {
+  .adminShell header,
+  .adminShell header div {
+    align-items: flex-start;
+  }
+  .adminShell header {
+    gap: 16px;
+  }
+  .adminShell header div {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .adminWorkspace {
+    grid-template-columns: 1fr;
+  }
+  .adminWorkspace aside {
+    border-right: 0;
+    border-bottom: 1px solid #51495b;
+  }
+  .adminWorkspace ol {
+    max-height: 220px;
+    overflow: auto;
+  }
+  .adminEditorToolbar,
+  .adminEditorFooter,
+  .adminAssetTool {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .adminEditor textarea {
+    min-height: 55vh;
+  }
+}
+
+/* Modular CMS editor */
+.adminEditor button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.adminEditorToolbar output {
+  max-width: 32rem;
+  text-align: right;
+  font-size: 0.82rem;
+}
+.adminEditorToolbar output.isDirty {
+  color: #f0c36b;
+}
+.adminTabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #51495b;
+}
+.adminTabs button {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  white-space: nowrap;
+}
+.adminTabs button.isActive {
+  border-color: #d6a14a;
+  background: #44394c;
+  color: #fff;
+}
+.adminTabPanel {
+  display: grid;
+  gap: 20px;
+  padding: 22px;
+  border: 1px solid #51495b;
+  border-radius: 10px;
+  background: #211d27;
+  /* height: 100vh; */
+  overflow-y: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.adminPanelHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.adminPanelHeading h2,
+.adminPanelHeading p {
+  margin: 0;
+}
+.adminPanelHeading p {
+  margin-top: 5px;
+  color: #bdb3c7;
+}
+.adminPublish {
+  display: flex !important;
+  grid-template-rows: none !important;
+  align-items: center;
+  gap: 9px !important;
+  white-space: nowrap;
+}
+.adminPublish input {
+  accent-color: #d6a14a;
+}
+.adminFieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+.adminField {
+  display: grid;
+  grid-template-rows: auto auto !important;
+  gap: 7px !important;
+  min-width: 0;
+}
+.adminField > span {
+  color: #d8d0df;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.adminField input,
+.adminField textarea,
+.adminInlineRow input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #655b73;
+  border-radius: 7px;
+  background: #100e13;
+  color: #f4efe8;
+  font: inherit;
+}
+.adminField textarea {
+  min-height: 185px;
+  resize: vertical;
+}
+.adminFieldWide {
+  grid-column: 1/-1;
+}
+.adminSectionList,
+.adminBodyList,
+.adminAssetList {
+  display: grid;
+  gap: 12px;
+}
+.adminModule {
+  overflow: hidden;
+  border: 1px solid #51495b;
+  border-radius: 8px;
+  background: #17151b;
+}
+.adminModule summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 14px 16px;
+  cursor: pointer;
+  background: #302a38;
+}
+.adminModule summary span {
+  font-weight: 700;
+}
+.adminModule summary small {
+  color: #bdb3c7;
+}
+.adminModuleContent {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+}
+.adminModuleToolbar,
+.adminBodyItemHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.adminModuleToolbar > .adminField {
+  flex: 1;
+}
+.adminRowControls {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.adminRowControls button {
+  padding: 6px 9px;
+}
+.adminDanger {
+  border-color: #915b64 !important;
+  color: #f2bdc4 !important;
+}
+.adminBodyItem,
+.adminAssetCard {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #403848;
+  border-radius: 7px;
+  background: #211d27;
+}
+.adminSubList {
+  display: grid;
+  gap: 8px;
+  margin-left: 16px;
+  padding-left: 14px;
+  border-left: 2px solid #51495b;
+}
+.adminInlineRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.adminAddRow {
+  display: flex;
+  gap: 8px;
+}
+.adminAddSmall,
+.adminAddModule {
+  justify-self: start;
+  border-style: dashed !important;
+  color: #d6a14a !important;
+}
+.adminAddModule {
+  padding: 11px 16px !important;
+}
+.adminRemoveModule,
+.adminRemoveProject {
+  justify-self: start;
+  margin-top: 6px;
+}
+.adminAssetField {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+}
+.adminAssetField img {
+  grid-column: 1/-1;
+  width: min(300px, 100%);
+  max-height: 180px;
+  object-fit: contain;
+  object-position: left;
+  border: 1px solid #51495b;
+  border-radius: 7px;
+  background: #100e13;
+}
+.adminUploadButton {
+  display: block !important;
+  padding: 10px 12px;
+  border: 1px solid #655b73;
+  border-radius: 7px;
+  background: #302a38;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.adminUploadButton input {
+  display: none;
+}
+.adminEmpty {
+  display: grid;
+  place-items: center;
+  gap: 14px;
+  min-height: 50vh;
+}
+.adminEmpty h2 {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .adminShell {
+    width: 100%;
+  }
+  .adminFieldGrid {
+    grid-template-columns: 1fr;
+  }
+  .adminPanelHeading,
+  .adminModuleToolbar {
+    flex-direction: column;
+  }
+  .adminRowControls {
+    align-self: flex-end;
+  }
+}
+@media (max-width: 760px) {
+  .adminTabs {
+    margin-inline: -20px;
+    padding-inline: 20px;
+  }
+  .adminTabPanel {
+    margin-inline: -10px;
+    padding: 16px;
+  }
+  .adminEditorToolbar > div {
+    flex-wrap: wrap;
+  }
+  .adminEditorToolbar output {
+    order: 3;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+  }
+  .adminBodyItemHeader {
+    flex-direction: column;
+  }
+  .adminRowControls {
+    align-self: auto;
+  }
+  .adminAssetField {
+    grid-template-columns: 1fr;
+  }
+  .adminAssetField img {
+    grid-column: auto;
+  }
+}
+
+/* Case study section tabs */
+
+.adminSectionEditor {
+  display: grid;
+}
+
+.adminSectionTabs {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  border-bottom: 1px solid #51495b;
+  flex-shrink: 0;
+}
+
+.adminSectionTabs button {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  white-space: nowrap;
+}
+
+.adminSectionTabs button.isActive {
+  border-color: #d6a14a;
+  color: #fff;
+  background: #44394c;
+}
+
+.adminSectionTabs .adminAddSectionTab {
+  border-style: dashed;
+  color: #d6a14a;
+}
+
+.adminSectionPanel {
+  border: 1px solid #51495b;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  background: #17151b;
+}
