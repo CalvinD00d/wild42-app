@@ -3,6 +3,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { NextResponse } from "next/server";
 import { isAdmin } from "@/lib/admin-auth";
+import { uploadDirectory } from "@/lib/upload-directory";
 
 const allowed = new Set(["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml", "application/pdf"]);
 
@@ -16,7 +17,7 @@ export async function POST(request: Request) {
     const extension = path.extname(file.name).toLowerCase() || ".bin";
     const base = path.basename(file.name, extension).replace(/[^a-z0-9-]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "asset";
     const filename = `${base}-${randomUUID().slice(0, 8)}${extension}`;
-    const directory = process.env.PORTFOLIO_UPLOAD_DIR || path.join(/* turbopackIgnore: true */ process.cwd(), "public", "uploads");
+    const directory = uploadDirectory();
     await mkdir(directory, { recursive: true });
     await writeFile(path.join(directory, filename), Buffer.from(await file.arrayBuffer()));
     return NextResponse.json({ ok: true, path: `/uploads/${filename}` });

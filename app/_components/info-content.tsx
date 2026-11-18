@@ -3,7 +3,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
-import type { NavItem } from "./portfolio-types";
+import type { InfoNavItem } from "./portfolio-types";
 
 const certifications = [
   ["Google UX Design Certification", "02/22/2025", "gUX1"],
@@ -83,7 +83,7 @@ function ContactContent({ onSent }: { onSent: () => void }) {
   </form><a className="contactLinkedin" href="https://www.linkedin.com/in/calvin-mcwilliams/" target="_blank" rel="noreferrer">LinkedIn</a></div>;
 }
 
-export function InfoContent({ item, onSent }: { item: NavItem; onSent: () => void }) {
+export function InfoContent({ item, onSent }: { item: InfoNavItem; onSent: () => void }) {
   if (item === "About") return <AboutContent />;
   if (item === "Certifications") return <CertificationsContent />;
   if (item === "Resume") return <ResumeContent />;

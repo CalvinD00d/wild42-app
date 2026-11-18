@@ -1,13 +1,15 @@
-import { NAV_ITEMS, type NavItem } from "./portfolio-types";
+import type { NavItem } from "./portfolio-types";
 
 export function PortfolioHeader({
   menuOpen,
   onMenuToggle,
   onNavigate,
+  items,
 }: {
   menuOpen: boolean;
   onMenuToggle: () => void;
   onNavigate: (item: NavItem) => void;
+  items: readonly NavItem[];
 }) {
   return (
     <header className="portfolioHeader sticky top-0 z-10 col-span-full" role="banner">
@@ -40,14 +42,15 @@ export function PortfolioHeader({
             id="primary-navigation-links"
             className={`portfolioNavLinks flex flex-[1_1_auto] items-center justify-center gap-[clamp(8px,1.4vw,22px)] max-[650px]:hidden ${menuOpen ? "isOpen" : ""}`}
           >
-            <div className="flex flex-[1_1_auto] gap-[clamp(8px,1.4vw,22px)] max-[650px]:flex-col">
-              {NAV_ITEMS.map((item) => (
+            <div className="flex min-w-0 flex-[1_1_auto] flex-nowrap gap-[clamp(8px,1.4vw,22px)] max-[650px]:flex-col">
+              {items.map((item) => (
                 <button
                   key={item}
                   type="button"
-                  data-modal-target={item.toLowerCase()}
+                  data-modal-target={item === "Video/Photo" ? "video-photo" : item.toLowerCase()}
+                  aria-haspopup={item === "Video/Photo" ? "dialog" : undefined}
                   onClick={() => onNavigate(item)}
-                  className="navLink flex h-full min-w-[100px] flex-[0_1_clamp(120px,12vw,250px)] items-center justify-center whitespace-nowrap px-[clamp(8px,1vw,14px)] py-2.5 max-[650px]:w-full max-[650px]:min-w-0 max-[650px]:px-3.5 max-[650px]:py-3"
+                  className="navLink flex h-full min-w-max flex-[1_1_auto] items-center justify-center whitespace-nowrap px-[clamp(4px,0.6vw,10px)] py-2.5 max-[650px]:h-auto max-[650px]:w-full max-[650px]:min-w-0 max-[650px]:px-3.5 max-[650px]:py-3"
                 >
                   {item}
                 </button>
