@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { DEFAULT_MEDIA, NAV_ITEMS, type MediaPhoto, type PortfolioMedia, type Project, type SiteContent } from "@/app/_components/portfolio-types";
 
 import { mediaCategories } from "@/app/_components/media-categories";
+import styles from "./admin-media.module.css";
 
 type EditorTab = "details" | "ux" | "design" | "products" | "assets";
 type BodyItem = string | { text?: string; sub?: string[] };
@@ -375,6 +376,7 @@ function AssetField({
   onUpload: (file: File) => Promise<string | null>;
 }) {
   const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState("");
   const isImage = value && /\.(avif|gif|jpe?g|png|svg|webp)$/i.test(value);
   return (
     <div className="adminAssetField">
@@ -394,16 +396,24 @@ function AssetField({
           accept={imagesOnly ? "image/jpeg,image/png,image/webp,image/gif,image/svg+xml" : "image/*,.pdf"}
           disabled={uploading}
           onChange={async (event) => {
-            const file = event.target.files?.[0];
+            const input = event.currentTarget;
+            const file = input.files?.[0];
             if (!file) return;
+            setUploadError("");
             setUploading(true);
-            const path = await onUpload(file);
-            if (path) onChange(path);
-            setUploading(false);
-            event.target.value = "";
+            try {
+              const path = await onUpload(file);
+              if (path) onChange(path);
+            } catch (error) {
+              setUploadError(error instanceof Error ? error.message : "Upload failed.");
+            } finally {
+              setUploading(false);
+              input.value = "";
+            }
           }}
         />
       </label>
+      {uploadError && <p className={styles.uploadError} role="alert">{uploadError}</p>}
     </div>
   );
 }
@@ -753,19 +763,52 @@ export function AdminEditor({
   }
   async function upload(file: File) {
     setStatus("Uploading asset…");
-    const body = new FormData();
-    body.set("file", file);
-    const response = await fetch("/api/admin/uploads", {
-      method: "POST",
-      body,
-    });
-    const result = await response.json();
-    setStatus(
-      response.ok
-        ? "Asset uploaded and attached—save to publish."
-        : result.error || "Upload failed.",
-    );
-    return response.ok ? (result.path as string) : null;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 45_000);
+
+    try {
+      if (file.size > 10 * 1024 * 1024) {
+        throw new Error("Choose a file 10 MB or smaller.");
+      }
+
+      const body = new FormData();
+      body.set("file", file);
+      const response = await fetch("/api/admin/uploads", {
+        method: "POST",
+        body,
+        signal: controller.signal,
+      });
+
+      if (response.status === 413) {
+        throw new Error("The server rejected the file size (HTTP 413).");
+      }
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+        throw new Error(
+          typeof result?.error === "string"
+            ? result.error
+            : `Upload failed (HTTP ${response.status}).`,
+        );
+      }
+
+      const result = await response.json().catch(() => null);
+      if (typeof result?.path !== "string" || !result.path) {
+        throw new Error("The upload endpoint returned no file path.");
+      }
+
+      setStatus("Asset uploaded and attached. Save to publish.");
+      return result.path;
+    } catch (error) {
+      const message = controller.signal.aborted
+        ? "Upload timed out after 45 seconds. Try again."
+        : error instanceof TypeError
+          ? "The upload request could not reach the server. Try again."
+          : error instanceof Error ? error.message : "Upload failed.";
+      setStatus(message);
+      throw new Error(message);
+    } finally {
+      window.clearTimeout(timeout);
+    }
   }
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" });
@@ -774,7 +817,7 @@ export function AdminEditor({
   }
 
   return (
-    <main className="adminShell">
+    <main className={editingMedia ? `adminShell ${styles.mediaShell}` : "adminShell"}>
       <div className="adminWorkspace">
         <aside>
           <header>
@@ -851,7 +894,7 @@ export function AdminEditor({
         </aside>
         <section className="adminEditor">
           {editingMedia ? (
-            <div className="adminTabPanel">
+            <div className={`adminTabPanel ${styles.mediaPanel}`}>
               <h2>Navigation and Video/Photo</h2>
               <datalist id="portfolio-media-categories">
                 {categories.map(({ key, label }) => <option key={key} value={label} />)}
@@ -883,7 +926,7 @@ export function AdminEditor({
                   ))}
                 </ol>
               </section>
-              <section aria-label="Videos">
+              <section className={styles.mediaColumn} aria-label="Videos">
                 <h2>Videos</h2>
                 {media.videos.map((video, index) => (
                   <div key={index}>
@@ -908,7 +951,7 @@ export function AdminEditor({
                   ...current, videos: [...current.videos, { url: "", title: "" }],
                 }))}>Add video</button>
               </section>
-              <section aria-label="Photos">
+              <section className={styles.mediaColumn} aria-label="Photos">
                 <h2>Photos</h2>
                 {media.photos.map((photo, index) => (
                   <div key={photo.id}>

@@ -1,0 +1,102 @@
+.mediaShell:global(.adminShell) {
+  height: 100dvh;
+  min-height: 0;
+  overflow-y: auto;
+  width: min(100%, 1100px);
+}
+
+.mediaShell > :global(.adminWorkspace) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.mediaShell > :global(.adminWorkspace) > aside {
+  border-bottom: 1px solid #51495b;
+  border-right: 0;
+}
+
+.mediaShell > :global(.adminWorkspace) > aside > ol {
+  display: none;
+}
+
+.mediaShell :global(.adminEditor) {
+  height: auto;
+  overflow: visible;
+}
+
+.mediaPanel:global(.adminTabPanel) {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  overflow: visible;
+}
+
+.mediaPanel > h2,
+.mediaPanel > section[aria-label="Menu order"] {
+  grid-column: 1 / -1;
+}
+
+.mediaPanel > section[aria-label="Menu order"] li {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.mediaPanel > section[aria-label="Menu order"] li > span {
+  flex: 1;
+}
+
+.mediaPanel > section[aria-label="Menu order"] li > button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  min-width: 44px;
+  text-align: center;
+  width: auto;
+}
+
+.mediaPanel > .mediaColumn {
+  align-content: start;
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mediaColumn > div {
+  border: 1px solid #51495b;
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.mediaColumn :global(.adminField) {
+  display: grid;
+  min-width: 0;
+}
+
+.mediaColumn :global(.adminField input) {
+  background: #100e13;
+  border: 1px solid #655b73;
+  border-radius: 7px;
+  min-width: 0;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.mediaColumn :global(.adminUploadButton input) {
+  display: none;
+}
+
+.uploadError {
+  color: #ffb8b8;
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .mediaPanel:global(.adminTabPanel) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
