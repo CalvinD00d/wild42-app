@@ -38,8 +38,8 @@ export const metadata: Metadata = {
       "UX engineering, frontend development, and design portfolio.",
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: "/vite.svg",
+    shortcut: "/vite.svg",
   },
   other: {
     "codex-preview": "development",
@@ -69,6 +69,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
+      </head>
       <body>
         {children}
         <script
