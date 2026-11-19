@@ -1209,3 +1209,139 @@ body {
 .adminShell header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid #51495b;background:#211d27}.adminShell header div{display:flex;align-items:baseline;gap:16px}.adminShell header h1{margin:0;font-size:1.4rem}.adminShell header span{color:#d6a14a}.adminShell nav{display:flex;gap:12px}.adminShell a,.adminShell button{border:1px solid #655b73;border-radius:7px;padding:8px 12px;color:inherit;background:#302a38}.adminWorkspace{display:grid;grid-template-columns:minmax(240px,320px) 1fr;min-height:calc(100vh - 75px)}.adminWorkspace aside{padding:20px;border-right:1px solid #51495b;background:#211d27}.adminAsideHeading,.adminEditorToolbar,.adminEditorFooter{display:flex;align-items:center;justify-content:space-between;gap:12px}.adminAsideHeading h2{margin:0;font-size:1rem}.adminWorkspace ol{display:grid;gap:8px;margin:18px 0 0;padding:0;list-style:none}.adminWorkspace li button{display:grid;gap:4px;width:100%;text-align:left}.adminWorkspace li button span{font-size:.75rem;color:#bdb3c7}.adminWorkspace li button.isSelected{border-color:#d6a14a;background:#44394c}.adminEditor{display:grid;grid-template-rows:auto 1fr auto;gap:16px;padding:20px;min-width:0}.adminEditorToolbar>div{display:flex;gap:8px}.adminEditorToolbar .adminSave{background:#d6a14a;color:#17151b;font-weight:700}.adminEditor label{display:grid;grid-template-rows:auto 1fr;gap:8px;min-height:0}.adminEditor textarea{width:100%;min-height:65vh;resize:vertical;padding:16px;border:1px solid #655b73;border-radius:8px;background:#100e13;color:#f4efe8;font:14px/1.5 monospace}.adminEditor output{color:#d6a14a}
 .adminAssetTool{display:flex;align-items:end;gap:16px;padding:12px;border:1px solid #51495b;border-radius:8px;background:#211d27}.adminAssetTool label{display:grid;gap:6px}.adminAssetTool input{max-width:360px;padding:8px;border:1px solid #655b73;border-radius:6px;background:#100e13;color:#f4efe8}
 @media(max-width:760px){.adminShell header,.adminShell header div{align-items:flex-start}.adminShell header{gap:16px}.adminShell header div{flex-direction:column;gap:2px}.adminWorkspace{grid-template-columns:1fr}.adminWorkspace aside{border-right:0;border-bottom:1px solid #51495b}.adminWorkspace ol{max-height:220px;overflow:auto}.adminEditorToolbar,.adminEditorFooter,.adminAssetTool{align-items:stretch;flex-direction:column}.adminEditor textarea{min-height:55vh}}
+
+@media (max-width: 650px) {
+  .portfolioNavLinks.isOpen {
+    height: auto;
+    max-height: 65dvh;
+    overflow-y: auto;
+  }
+
+  .portfolioNavLinks.isOpen > div {
+    flex: 0 0 auto;
+    width: 100%;
+    gap: 0;
+  }
+
+  .portfolioNavLinks.isOpen .navLink {
+    flex: none;
+    height: auto;
+    min-height: 44px;
+    padding-block: 8px;
+  }
+}
+
+@media (max-width: 650px) {
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) {
+    background: linear-gradient(
+      160deg,
+      rgb(20 33 48 / 92%),
+      rgb(23 27 47 / 94%) 40%,
+      rgb(11 15 20 / 97%) 85%
+    );
+    backdrop-filter: none;
+  }
+
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) .portfolioBrand {
+    justify-self: start;
+    margin-inline-start: 24px;
+    margin-block-start: 16px;
+  }
+
+  .portfolioHeader .menuToggle[aria-expanded="true"] {
+    border: 1px solid #7dd3fc;
+  }
+
+  .portfolioHeader .portfolioNavLinks.isOpen > div {
+    min-height: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 650px) {
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+  }
+
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) .portfolioNav {
+    height: 100%;
+  }
+
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) .portfolioNav > div {
+    display: grid;
+    height: 100%;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .portfolioHeader .portfolioNavLinks.isOpen {
+    position: static;
+    grid-column: 1 / -1;
+    align-self: stretch;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow-y: auto;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .portfolioHeader:has(.portfolioNavLinks.isOpen) .portfolioBrand {
+    visibility: hidden;
+  }
+}
+
+.adminWorkspace:has(> .adminEditor > .adminTabPanel > section[aria-label="Videos"]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.adminWorkspace:has(> .adminEditor > .adminTabPanel > section[aria-label="Videos"]) > aside {
+  border-right: 0;
+  border-bottom: 1px solid #51495b;
+}
+
+.adminWorkspace:has(> .adminEditor > .adminTabPanel > section[aria-label="Videos"]) > aside > ol {
+  display: none;
+}
+
+.adminWorkspace:has(> .adminEditor > .adminTabPanel > section[aria-label="Videos"]) > .adminEditor {
+  height: auto;
+  overflow: visible;
+}
+
+.adminTabPanel > :is(section[aria-label="Videos"], section[aria-label="Photos"]) {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+}
+
+.adminTabPanel > :is(section[aria-label="Videos"], section[aria-label="Photos"]) > div {
+  display: grid;
+  min-width: 0;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #51495b;
+  border-radius: 8px;
+}
+
+.adminTabPanel > :is(section[aria-label="Videos"], section[aria-label="Photos"]) .adminRowControls {
+  flex-wrap: wrap;
+}
+
+.adminShell:has(.adminTabPanel > section[aria-label="Videos"]) {
+  width: min(100%, 1100px);
+  height: 100dvh;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.adminTabPanel:has(> section[aria-label="Videos"]) {
+  min-width: 0;
+  overflow: visible;
+}

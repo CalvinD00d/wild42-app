@@ -14,7 +14,7 @@ export function PortfolioContent({
       <div className="min-w-0 flex-[1_1_0]">
         <section className="portfolioHero mb-2.5 p-[26px] max-[900px]:flex max-[900px]:items-start max-[900px]:justify-between max-[900px]:gap-3.5 max-[900px]:p-[18px]" aria-label="Introduction">
           <div className="min-w-0 flex-[1_1_auto]">
-            <h1 className="portfolioHeroTitle m-0 mb-2.5">Designer. Developer. Facilitator</h1>
+            <h1 className="portfolioHeroTitle m-0 mb-2.5">Designer. Innovator. Facilitator</h1>
             <p className="portfolioHeroIntro m-0 max-w-[56ch]">I design and build modern, accessible web experiences.</p>
           </div>
           <div className="hidden flex-[0_0_116px] max-[900px]:block">
@@ -54,7 +54,7 @@ export function PortfolioContent({
           </div>
           <div className="portfolioProfileCopy px-[18px] pb-5 pt-[18px]">
             <div className="profileName mb-1.5">Calvin McWilliams</div>
-            <div className="profileRole">UX Engineer / Frontend Developer</div>
+            <div className="profileRole">UX Engineer / Frontend Design Systems</div>
           </div>
         </div>
       </section>
