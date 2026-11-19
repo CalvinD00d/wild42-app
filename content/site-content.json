@@ -265,7 +265,7 @@
   },
   "projects": [
     {
-      "slug": "speedRun",
+      "slug": "speedrun",
       "title": "SpeedRun-X Web App",
       "subtitle": "AMD Engineer Testing Platform",
       "caseStudy": {
@@ -1244,5 +1244,93 @@
         "heading": "There are currently no other assets listed for this project."
       }
     }
+  ],
+  "media": {
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=cCsor9e0hjQ",
+        "title": "1985 Porsche 930 Turbo | The Legendary Air-Cooled 911",
+        "category": "GT International"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ZNKFxg6n1sU&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=4",
+        "title": "Victoria Plekenpol - doTerra Series - UpLevel",
+        "category": "Victoria Plekenpol"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=08Q7R32sXy0&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=5",
+        "title": "EquQuest - Problem Horses",
+        "category": "EquQuest"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=cgdSIVWh1kE&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=7",
+        "title": "Petra Valica - The Awakening Series",
+        "category": "Petra Valica"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=0DQUZ3snM-0&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=1",
+        "title": "Saving Scott - 48 Hour Film Project Entry",
+        "category": "Miscellaneous"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=FMj75AQ987I",
+        "title": "Porsche 991.2 Twin Turbo",
+        "category": "GT International"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=XAaCWIcbRqA",
+        "title": "2009 Porsche Cayman Track Car | Polite Mode vs. Awesome Mode",
+        "category": "GT International"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=FgortysS61I&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=9",
+        "title": "Petra Valica - Stroll",
+        "category": "Petra Valica"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=OMddLZXizLA&list=PLmt8g7OjNjl3IapIsIXU717zOBrI1uP_0&index=6",
+        "title": "Petra Valica - Boxing",
+        "category": "Petra Valica"
+      }
+    ],
+    "photos": [
+      {
+        "id": "73eab65a-1c1c-463e-9084-fa25bd4be3b6",
+        "src": "/uploads/ferrarienginebrand-162228f9.png",
+        "alt": "Ferrari Engine",
+        "category": "GT International"
+      },
+      {
+        "id": "1a2da2b6-2a4c-48c0-84b3-eb128bb53a61",
+        "src": "/uploads/img-5946-jpg-88311667.jpg",
+        "alt": "Safari Porsche",
+        "category": "GT International"
+      },
+      {
+        "id": "910c8a2a-8e03-4bd8-b41e-43cb561f21f1",
+        "src": "/uploads/img-e5945-jpg-fe60ba29.jpg",
+        "alt": "Safari Build",
+        "category": "GT International"
+      },
+      {
+        "id": "72222e33-f95c-402b-b73b-a248f3ad7352",
+        "src": "/uploads/930brand1-eedd90c4.png",
+        "alt": "White 930 + branding",
+        "category": "GT International"
+      },
+      {
+        "id": "ddaa575a-3b5f-43f6-9e16-238dcd1877f2",
+        "src": "/uploads/red930branding-91a81133.png",
+        "alt": "Red 930 + branding",
+        "category": "GT International"
+      }
+    ]
+  },
+  "navigation": [
+    "About",
+    "Certifications",
+    "Resume",
+    "Video/Photo",
+    "Contact"
   ]
 }

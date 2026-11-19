@@ -817,271 +817,269 @@ export function AdminEditor({
   }
 
   return (
-    <main className={editingMedia ? `adminShell ${styles.mediaShell}` : "adminShell"}>
-      <div className="adminWorkspace">
-        <aside>
-          <header>
-            <div>
-              <span>Wild42</span>
-              <h1>Portfolio CMS</h1>
-            </div>
-            <nav>
-              <a href="/" target="_blank">
-                View portfolio
-              </a>
-              <button type="button" onClick={logout}>
-                Sign out
-              </button>
-            </nav>
-          </header>
-          <div className="adminEditorToolbar">
-            <button type="button" aria-pressed={editingMedia} onClick={() => setEditingMedia(!editingMedia)}>
-              Navigation and Video/Photo
-            </button>
+    <main className={`adminShell ${styles.workspace}`}>
+      <aside className={styles.controls} aria-label="Portfolio controls">
+        <header>
+          <div>
+            <span>Wild42</span>
+            <h1>Portfolio CMS</h1>
           </div>
-          <div className="adminEditorToolbar">
-            <div>
-              <button
-                type="button"
-                disabled={selectedIndex <= 0}
-                onClick={() => moveProject(-1)}
-              >
-                Move up
-              </button>
-              <button
-                type="button"
-                disabled={
-                  selectedIndex < 0 ||
-                  selectedIndex === content.projects.length - 1
-                }
-                onClick={() => moveProject(1)}
-              >
-                Move down
-              </button>
+          <nav>
+            <a href="/" target="_blank">
+              View portfolio
+            </a>
+            <button type="button" onClick={logout}>
+              Sign out
+            </button>
+          </nav>
+        </header>
+        <div className="adminEditorToolbar">
+          <button type="button" aria-pressed={editingMedia} onClick={() => setEditingMedia(!editingMedia)}>
+            Navigation and Video/Photo
+          </button>
+        </div>
+        <div className="adminEditorToolbar">
+          <div>
+            <button
+              type="button"
+              disabled={selectedIndex <= 0}
+              onClick={() => moveProject(-1)}
+            >
+              Move up
+            </button>
+            <button
+              type="button"
+              disabled={
+                selectedIndex < 0 ||
+                selectedIndex === content.projects.length - 1
+              }
+              onClick={() => moveProject(1)}
+            >
+              Move down
+            </button>
             <button type="button" onClick={addProject}>
               + Add
             </button>
-            </div>
           </div>
-          <ol>
-            <h2>Case studies</h2>
-            {content.projects.map((item) => (
-              <li key={item.slug}>
-                <button
-                  type="button"
-                  className={item.slug === selectedSlug ? "isSelected" : ""}
-                  onClick={() => { select(item); setEditingMedia(false); }}
-                >
-                  <strong>{item.title}</strong>
-                  <span>
-                    {item.published === false ? "Draft" : "Published"}
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ol>
-            <div className="asideStatus">
-              <output className={dirty ? "isDirty" : ""}>{status}</output>
+        </div>
+        <div className="asideStatus">
+          <output className={dirty ? "isDirty" : ""}>{status}</output>
+          <button
+            type="button"
+            className="adminSave"
+            disabled={!dirty}
+            onClick={save}
+          >
+            Save all changes
+          </button>
+        </div>
+        <h2 className={styles.projectsHeading}>Case studies</h2>
+        <ol className={styles.projectList}>
+          {content.projects.map((item) => (
+            <li key={item.slug}>
               <button
                 type="button"
-                className="adminSave"
-                disabled={!dirty}
-                onClick={save}
+                className={item.slug === selectedSlug ? "isSelected" : ""}
+                onClick={() => { select(item); setEditingMedia(false); }}
               >
-                Save all changes
+                <strong>{item.title}</strong>
+                <span>
+                  {item.published === false ? "Draft" : "Published"}
+                </span>
               </button>
-            </div>
-        </aside>
-        <section className="adminEditor">
-          {editingMedia ? (
-            <div className={`adminTabPanel ${styles.mediaPanel}`}>
-              <h2>Navigation and Video/Photo</h2>
-              <datalist id="portfolio-media-categories">
-                {categories.map(({ key, label }) => <option key={key} value={label} />)}
-              </datalist>
-              <section aria-label="Menu order">
-                <h2>Menu order</h2>
-                <ol>
-                  {navigation.map((item, index) => (
-                    <li key={item} className="adminRowControls">
-                      <span>{item}</span>
-                      {([-1, 1] as const).map((offset) => (
-                        <button
-                          key={offset}
-                          type="button"
-                          aria-label={`Move ${item} ${offset === -1 ? "up" : "down"}`}
-                          disabled={index + offset < 0 || index + offset >= navigation.length}
-                          onClick={() => {
-                            setContent((current) => ({
-                              ...current,
-                              navigation: moveItem(current.navigation ?? [...NAV_ITEMS], index, offset),
-                            }));
-                            setDirty(true);
-                          }}
-                        >
-                          {offset === -1 ? "↑" : "↓"}
-                        </button>
-                      ))}
-                    </li>
-                  ))}
-                </ol>
-              </section>
-              <section className={styles.mediaColumn} aria-label="Videos">
-                <h2>Videos</h2>
-                {media.videos.map((video, index) => (
-                  <div key={index}>
-                    <Field label="Title" value={video.title} onChange={(title) => updateMedia((current) => ({
-                      ...current, videos: current.videos.map((item, row) => row === index ? { ...item, title } : item),
-                    }))} />
-                    <Field label="YouTube video URL" value={video.url} onChange={(url) => updateMedia((current) => ({
-                      ...current, videos: current.videos.map((item, row) => row === index ? { ...item, url } : item),
-                    }))} />
-                    <Field label="Category" list="portfolio-media-categories" value={video.category}
-                      onChange={(category) => updateMedia((current) => ({
-                        ...current, videos: current.videos.map((item, row) => row === index ? { ...item, category } : item),
-                      }))}
-                    />
-                    <RowControls index={index} count={media.videos.length}
-                      onMove={(offset) => updateMedia((current) => ({ ...current, videos: moveItem(current.videos, index, offset) }))}
-                      onRemove={() => updateMedia((current) => ({ ...current, videos: current.videos.filter((_, row) => row !== index) }))}
-                    />
-                  </div>
+            </li>
+          ))}
+        </ol>
+      </aside>
+      <section className={styles.editor} aria-label="Content editor">
+        {editingMedia ? (
+          <div className={styles.mediaPanel}>
+            <h2>Navigation and Video/Photo</h2>
+            <datalist id="portfolio-media-categories">
+              {categories.map(({ key, label }) => <option key={key} value={label} />)}
+            </datalist>
+            <section aria-label="Menu order">
+              <h2>Menu order</h2>
+              <ol>
+                {navigation.map((item, index) => (
+                  <li key={item} className="adminRowControls">
+                    <span>{item}</span>
+                    {([-1, 1] as const).map((offset) => (
+                      <button
+                        key={offset}
+                        type="button"
+                        aria-label={`Move ${item} ${offset === -1 ? "up" : "down"}`}
+                        disabled={index + offset < 0 || index + offset >= navigation.length}
+                        onClick={() => {
+                          setContent((current) => ({
+                            ...current,
+                            navigation: moveItem(current.navigation ?? [...NAV_ITEMS], index, offset),
+                          }));
+                          setDirty(true);
+                        }}
+                      >
+                        {offset === -1 ? "↑" : "↓"}
+                      </button>
+                    ))}
+                  </li>
                 ))}
-                <button type="button" onClick={() => updateMedia((current) => ({
-                  ...current, videos: [...current.videos, { url: "", title: "" }],
-                }))}>Add video</button>
-              </section>
-              <section className={styles.mediaColumn} aria-label="Photos">
-                <h2>Photos</h2>
-                {media.photos.map((photo, index) => (
-                  <div key={photo.id}>
-                    <AssetField imagesOnly label="Image path" value={photo.src} onUpload={upload}
-                      onChange={(src) => updatePhoto(photo.id, { src })}
-                    />
-                    <Field label="Alt text" value={photo.alt} onChange={(alt) => updatePhoto(photo.id, { alt })} />
-                    <Field label="Category" list="portfolio-media-categories" value={photo.category}
-                      onChange={(category) => updatePhoto(photo.id, { category })}
-                    />
-                    <RowControls index={index} count={media.photos.length}
-                      onMove={(offset) => updateMedia((current) => ({ ...current, photos: moveItem(current.photos, index, offset) }))}
-                      onRemove={() => updateMedia((current) => ({ ...current, photos: current.photos.filter((item) => item.id !== photo.id) }))}
-                    />
+              </ol>
+            </section>
+            <section className={styles.mediaColumn} aria-label="Videos">
+              <h2>Videos</h2>
+              {media.videos.map((video, index) => (
+                <div key={index}>
+                  <Field label="Title" value={video.title} onChange={(title) => updateMedia((current) => ({
+                    ...current, videos: current.videos.map((item, row) => row === index ? { ...item, title } : item),
+                  }))} />
+                  <Field label="YouTube video URL" value={video.url} onChange={(url) => updateMedia((current) => ({
+                    ...current, videos: current.videos.map((item, row) => row === index ? { ...item, url } : item),
+                  }))} />
+                  <Field label="Category" list="portfolio-media-categories" value={video.category}
+                    onChange={(category) => updateMedia((current) => ({
+                      ...current, videos: current.videos.map((item, row) => row === index ? { ...item, category } : item),
+                    }))}
+                  />
+                  <RowControls index={index} count={media.videos.length}
+                    onMove={(offset) => updateMedia((current) => ({ ...current, videos: moveItem(current.videos, index, offset) }))}
+                    onRemove={() => updateMedia((current) => ({ ...current, videos: current.videos.filter((_, row) => row !== index) }))}
+                  />
+                </div>
+              ))}
+              <button type="button" onClick={() => updateMedia((current) => ({
+                ...current, videos: [...current.videos, { url: "", title: "" }],
+              }))}>Add video</button>
+            </section>
+            <section className={styles.mediaColumn} aria-label="Photos">
+              <h2>Photos</h2>
+              {media.photos.map((photo, index) => (
+                <div key={photo.id}>
+                  <AssetField imagesOnly label="Image path" value={photo.src} onUpload={upload}
+                    onChange={(src) => updatePhoto(photo.id, { src })}
+                  />
+                  <Field label="Alt text" value={photo.alt} onChange={(alt) => updatePhoto(photo.id, { alt })} />
+                  <Field label="Category" list="portfolio-media-categories" value={photo.category}
+                    onChange={(category) => updatePhoto(photo.id, { category })}
+                  />
+                  <RowControls index={index} count={media.photos.length}
+                    onMove={(offset) => updateMedia((current) => ({ ...current, photos: moveItem(current.photos, index, offset) }))}
+                    onRemove={() => updateMedia((current) => ({ ...current, photos: current.photos.filter((item) => item.id !== photo.id) }))}
+                  />
+                </div>
+              ))}
+              <button type="button" onClick={() => {
+                const id = crypto.randomUUID();
+                updateMedia((current) => ({ ...current, photos: [...current.photos, { id, src: "", alt: "" }] }));
+              }}>Add photo</button>
+            </section>
+          </div>
+        ) : project ? (
+          <>
+            <nav className="adminTabs" aria-label="Project editor">
+              {TABS.map((tab) => (
+                <button
+                  type="button"
+                  key={tab.id}
+                  className={activeTab === tab.id ? "isActive" : ""}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </nav>
+            {activeTab === "details" && (
+              <div className="adminTabPanel">
+                <div className="adminPanelHeading">
+                  <div>
+                    <h2>Project details</h2>
+                    <p>
+                      Control how this case study appears in the portfolio.
+                    </p>
                   </div>
-                ))}
-                <button type="button" onClick={() => {
-                  const id = crypto.randomUUID();
-                  updateMedia((current) => ({ ...current, photos: [...current.photos, { id, src: "", alt: "" }] }));
-                }}>Add photo</button>
-              </section>
-            </div>
-          ) : project ? (
-            <>
-              <nav className="adminTabs" aria-label="Project editor">
-                {TABS.map((tab) => (
-                  <button
-                    type="button"
-                    key={tab.id}
-                    className={activeTab === tab.id ? "isActive" : ""}
-                    onClick={() => setActiveTab(tab.id)}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </nav>
-              {activeTab === "details" && (
-                <div className="adminTabPanel">
-                  <div className="adminPanelHeading">
-                    <div>
-                      <h2>Project details</h2>
-                      <p>
-                        Control how this case study appears in the portfolio.
-                      </p>
-                    </div>
-                    <label className="adminPublish">
-                      <input
-                        type="checkbox"
-                        checked={project.published !== false}
-                        onChange={(event) =>
-                          updateProject({ published: event.target.checked })
-                        }
-                      />
-                      <span>
-                        {project.published === false ? "Draft" : "Published"}
-                      </span>
-                    </label>
-                  </div>
-                  <div className="adminFieldGrid">
-                    <Field
-                      label="Project title"
-                      value={project.title}
-                      onChange={(title) => updateProject({ title })}
-                    />
-                    <Field
-                      label="Subtitle"
-                      value={project.subtitle}
-                      onChange={(subtitle) => updateProject({ subtitle })}
-                    />
-                    <Field
-                      label="Slug"
-                      value={project.slug}
-                      onChange={(slug) =>
-                        updateProject({
-                          slug: slug.replace(/\s+/g, "-").toLowerCase(),
-                        })
+                  <label className="adminPublish">
+                    <input
+                      type="checkbox"
+                      checked={project.published !== false}
+                      onChange={(event) =>
+                        updateProject({ published: event.target.checked })
                       }
                     />
-                  </div>
-                  <button
-                    type="button"
-                    className="adminDanger adminRemoveProject"
-                    onClick={removeProject}
-                  >
-                    Remove project
-                  </button>
+                    <span>
+                      {project.published === false ? "Draft" : "Published"}
+                    </span>
+                  </label>
                 </div>
-              )}
-              {activeTab === "ux" && (
-                <CaseStudyEditor
-                  value={project.caseStudy}
-                  onChange={(caseStudy) => updateProject({ caseStudy })}
-                />
-              )}
-              {activeTab === "design" && (
-                <CaseStudyEditor
-                  designThinking
-                  value={project.designThinking}
-                  onChange={(designThinking) =>
-                    updateProject({ designThinking })
-                  }
-                />
-              )}
-              {activeTab === "products" && (
-                <CollectionEditor
-                  title="Products"
-                  value={project.products}
-                  onChange={(products) => updateProject({ products })}
-                  onUpload={upload}
-                />
-              )}
-              {activeTab === "assets" && (
-                <CollectionEditor
-                  title="Other Assets"
-                  value={project.otherAssets}
-                  onChange={(otherAssets) => updateProject({ otherAssets })}
-                  onUpload={upload}
-                />
-              )}
-            </>
-          ) : (
-            <div className="adminEmpty">
-              <h2>No case studies yet</h2>
-              <button type="button" onClick={addProject}>
-                Create the first one
-              </button>
-            </div>
-          )}
-        </section>
-      </div>
+                <div className="adminFieldGrid">
+                  <Field
+                    label="Project title"
+                    value={project.title}
+                    onChange={(title) => updateProject({ title })}
+                  />
+                  <Field
+                    label="Subtitle"
+                    value={project.subtitle}
+                    onChange={(subtitle) => updateProject({ subtitle })}
+                  />
+                  <Field
+                    label="Slug"
+                    value={project.slug}
+                    onChange={(slug) =>
+                      updateProject({
+                        slug: slug.replace(/\s+/g, "-").toLowerCase(),
+                      })
+                    }
+                  />
+                </div>
+                <button
+                  type="button"
+                  className="adminDanger adminRemoveProject"
+                  onClick={removeProject}
+                >
+                  Remove project
+                </button>
+              </div>
+            )}
+            {activeTab === "ux" && (
+              <CaseStudyEditor
+                value={project.caseStudy}
+                onChange={(caseStudy) => updateProject({ caseStudy })}
+              />
+            )}
+            {activeTab === "design" && (
+              <CaseStudyEditor
+                designThinking
+                value={project.designThinking}
+                onChange={(designThinking) =>
+                  updateProject({ designThinking })
+                }
+              />
+            )}
+            {activeTab === "products" && (
+              <CollectionEditor
+                title="Products"
+                value={project.products}
+                onChange={(products) => updateProject({ products })}
+                onUpload={upload}
+              />
+            )}
+            {activeTab === "assets" && (
+              <CollectionEditor
+                title="Other Assets"
+                value={project.otherAssets}
+                onChange={(otherAssets) => updateProject({ otherAssets })}
+                onUpload={upload}
+              />
+            )}
+          </>
+        ) : (
+          <div className="adminEmpty">
+            <h2>No case studies yet</h2>
+            <button type="button" onClick={addProject}>
+              Create the first one
+            </button>
+          </div>
+        )}
+      </section>
     </main>
   );
 }

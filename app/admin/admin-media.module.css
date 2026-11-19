@@ -1,40 +1,84 @@
-.mediaShell:global(.adminShell) {
+.workspace:global(.adminShell) {
+  display: flex;
+  flex-direction: row;
   height: 100dvh;
   min-height: 0;
-  overflow-y: auto;
-  width: min(100%, 1100px);
+  overflow: hidden;
+  width: min(100%, 1250px);
 }
 
-.mediaShell > :global(.adminWorkspace) {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.mediaShell > :global(.adminWorkspace) > aside {
-  border-bottom: 1px solid #51495b;
-  border-right: 0;
-}
-
-.mediaShell > :global(.adminWorkspace) > aside > ol {
-  display: none;
-}
-
-.mediaShell :global(.adminEditor) {
-  height: auto;
-  overflow: visible;
-}
-
-.mediaPanel:global(.adminTabPanel) {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.controls,
+.editor {
+  min-height: 0;
   min-width: 0;
-  overflow: visible;
+  overflow-y: auto;
 }
 
-.mediaPanel > h2,
-.mediaPanel > section[aria-label="Menu order"] {
-  grid-column: 1 / -1;
+.controls {
+  background: #211d27;
+  border-right: 1px solid #51495b;
+  flex: 0 0 clamp(240px, 28%, 300px);
+  padding: 12px;
+}
+
+.controls > header,
+.controls > header > nav,
+.controls :global(.adminEditorToolbar),
+.controls :global(.adminEditorToolbar) > div {
+  flex-wrap: wrap;
+}
+
+.projectsHeading {
+  margin: 0 0 8px;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projectList button {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.projectList button span {
+  color: #bdb3c7;
+  font-size: 0.75rem;
+}
+
+.projectList button:global(.isSelected) {
+  background: #44394c;
+  border-color: #d6a14a;
+}
+
+.editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.workspace button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.editor > * {
+  flex-shrink: 0;
+}
+
+.mediaPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .mediaPanel > section[aria-label="Menu order"] li {
@@ -96,7 +140,23 @@
 }
 
 @media (max-width: 760px) {
-  .mediaPanel:global(.adminTabPanel) {
-    grid-template-columns: minmax(0, 1fr);
+  .workspace:global(.adminShell) {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .controls,
+  .editor {
+    flex: none;
+    overflow: visible;
+  }
+
+  .controls {
+    border-bottom: 1px solid #51495b;
+    border-right: 0;
+  }
+
+  .editor {
+    padding: 14px;
   }
 }
